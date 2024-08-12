@@ -3,12 +3,14 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 
 function Faq() {
   return (
-    <div className="bg-base-200">
+    <div className="min-h-screen bg-base-200">
       <div className="hero">
-        <div className="hero-content text-center">
+        <div className="text-center hero-content">
           <div className="max-w-md">
             <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
-              <h1 className="text-5xl font-bold  mt-10">HTTP(S) 🔒</h1>
+              <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
+                HTTP(S) 🔒
+              </h1>
             </AnimationOnScroll>
             <AnimationOnScroll
               animateOnce={true}
@@ -24,7 +26,7 @@ function Faq() {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row w-full justify-center items-start md:items-center lg:items-center">
+      <div className="flex flex-col items-start justify-center w-full sm:flex-row md:flex-row lg:flex-row md:items-center lg:items-center">
         <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInLeft">
           <FaqCard
             question="What is HTTP"
@@ -35,7 +37,7 @@ function Faq() {
         </AnimationOnScroll>
 
         {/* Hide the divider on small screens and adjust styling for larger screens */}
-        <div className="hidden sm:flex md:flex lg:flex divider lg:divider-horizontal mx-auto  justify-center items-center h-screen"></div>
+        <div className="items-center justify-center hidden h-screen mx-auto sm:flex md:flex lg:flex divider lg:divider-horizontal"></div>
 
         <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInRight">
           <FaqCard
@@ -46,8 +48,7 @@ function Faq() {
         </AnimationOnScroll>
       </div>
 
-      <br></br>
-      <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row w-full justify-center items-start md:items-center lg:items-center">
+      <div className="flex flex-col items-start justify-center w-full sm:flex-row md:flex-row lg:flex-row md:items-center lg:items-center">
         <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInLeft">
           <FaqCard
             question="How does HTTPS improve security?"
@@ -56,7 +57,7 @@ function Faq() {
           />
         </AnimationOnScroll>
 
-        <div className="hidden sm:flex md:flex lg:flex divider lg:divider-horizontal mx-auto  justify-center items-center h-screen"></div>
+        <div className="items-center justify-center hidden h-screen mx-auto sm:flex md:flex lg:flex divider lg:divider-horizontal"></div>
         <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInRight">
           <FaqCard
             question="Why is HTTPS important for websites?"
@@ -65,48 +66,42 @@ function Faq() {
           />
         </AnimationOnScroll>
       </div>
-      <br></br>
-      <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row w-full justify-center items-start md:items-center lg:items-center ">
+
+      <div className="flex flex-col items-start justify-center w-full sm:flex-row md:flex-row lg:flex-row md:items-center lg:items-center ">
         <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInLeft">
           <FaqCard
             question="How can you tell if a website uses HTTPS?"
             answer="To determine if a website uses HTTPS l..."
+            className=""
             longdesc="To determine if a website uses HTTPS, look at the URL in the browser's address bar. If the URL starts with *https://* instead of *http://*, the site is using HTTPS. Additionally, most browsers display a padlock icon next to the URL, indicating a secure connection. Some browsers may also show warnings if a site is not secure, highlighting the importance of using HTTPS."
           />
         </AnimationOnScroll>
 
-        <div className="hidden sm:flex md:flex lg:flex divider lg:divider-horizontal mx-auto  justify-center items-center h-screen"></div>
+        <div className="items-center justify-center hidden h-screen mx-auto sm:flex md:flex lg:flex divider lg:divider-horizontal"></div>
         <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInRight">
           <FaqCard
             question="How much do HTTPS certificates cost?"
             answer="The cost of HTTPS certificates can vary..."
+            className="flex flex-col justify-center mx-auto"
             longdesc="The cost of HTTPS certificates can vary widely. Some certificate authorities (CAs) offer free certificates, like Let's Encrypt, which provide basic SSL/TLS encryption. Other CAs offer paid certificates that can range from $10 to several hundred dollars per year, depending on the level of validation (Domain Validation, Organization Validation, Extended Validation) and additional features like warranty, customer support, and site seals."
           />
         </AnimationOnScroll>
       </div>
-      <br></br>
 
-      <br></br>
-      <br></br>
       <AnimationOnScroll animateOnce={true} animateIn="zoomInUp" offset={50}>
         <a
           href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
           target="_blank"
-          className="btn btn-primary btn-wide flex flex-col  mx-auto justify-center"
+          className="flex flex-col justify-center mx-auto mt-12 btn btn-primary btn-wide "
         >
           [ Learn More ]
         </a>
       </AnimationOnScroll>
-
-      <br></br>
-
-      <br></br>
     </div>
   );
 }
 
 function FaqCard(props) {
-  // Rest of your component...
   const applyBlur = () => {
     document.body.style.filter = "blur(10px)";
   };
@@ -131,32 +126,36 @@ function FaqCard(props) {
     <div>
       <div className={isModalOpen ? "blur-background" : ""}>
         <div onClick={openModal}>
+          {/* modal start */}
           <dialog
             id={props.question}
             className="modal"
             open={isModalOpen}
             onClose={closeModal}
           >
-            <div className="modal-box ease-in-out delay-50 bg-[#9713fb]">
-              <div className="mockup-code overflow-x-hidden  h-45 w-50 text-balance ">
+            <div className="modal-box  ease-in-out delay-50 bg-[#9713fb] p-5 rounded-lg w-full max-w-lg mx-auto ">
+              <div className="w-full overflow-x-hidden mockup-code h-45 text-balance">
                 <pre data-prefix="$:" className="text-warning">
                   <code>{props.question}</code>
                 </pre>
-                <pre data-prefix=">:" className="text-success ">
-                  <div className="text-center text-pretty ">
-                    <code className="">{props.longdesc}</code>
+                <pre data-prefix=">:" className="text-success">
+                  <div className="text-center text-pretty">
+                    <code>{props.longdesc}</code>
                   </div>
                 </pre>
               </div>
             </div>
 
             <form method="dialog" className="modal-backdrop">
-              <button onClick={closeModal}>close</button>
+              <button onClick={closeModal} className="btn btn-primary">
+                close
+              </button>
             </form>
           </dialog>
+          {/* modal close */}
           <div
             onClick={openModal}
-            className="mockup-code overflow-x-hidden  h-45 w-50 text-balance "
+            className="max-w-sm mb-3 overflow-auto cursor-pointer md:mx-auto mockup-code text-balance md:max-w-md"
           >
             <pre data-prefix="$:" className="text-warning">
               <code>{props.question}</code>

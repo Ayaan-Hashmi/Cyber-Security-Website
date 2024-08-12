@@ -97,10 +97,10 @@ This version should effectively communicate the risks while remaining engaging a
         {isLocked && (
           <div className="bg-base-200">
             <div className="hero">
-              <div className="hero-content text-center">
+              <div className="text-center hero-content">
                 <div className="max-w-md">
                   <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
-                    <h1 className="text-5xl font-bold  mt-10 text-nowrap">
+                    <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                       Resources++📕
                     </h1>
                   </AnimationOnScroll>
@@ -110,14 +110,15 @@ This version should effectively communicate the risks while remaining engaging a
                     delay={200}
                   >
                     <p className="py-6 mb-5">
-                      Now that you are aware of basic cybersecurity conecepts
-                      here are some resources to get started
+                      {/* rephrase to make it more proffesional and engaging */}
+                      A collection of handcrafted and open source resources to
+                      get your journey started
                     </p>
                   </AnimationOnScroll>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col w-full justify-center lg:flex-row">
+            <div className="flex flex-col justify-center w-full lg:flex-row">
               <TeamMember
                 name="Linux Foundation"
                 avatar="https://github.com/whirlxd.png"
@@ -145,8 +146,8 @@ This version should effectively communicate the risks while remaining engaging a
                 twitter="https://twitter.com/whirl_21"
               ></TeamMember>
             </div>
-            <br></br>
-            <div className="flex flex-col w-full justify-center lg:flex-row">
+
+            <div className="flex flex-col justify-center w-full lg:flex-row">
               <TeamMember
                 name="SEQUEL"
                 avatar="https://github.com/shadowcodesyt.png"
@@ -174,8 +175,8 @@ This version should effectively communicate the risks while remaining engaging a
                 twitter="https://twitter.com/whirl_21"
               ></TeamMember>
             </div>
-            <br></br>
-            <div className="flex flex-col w-full justify-center lg:flex-row">
+
+            <div className="flex flex-col justify-center w-full lg:flex-row">
               <TeamMember
                 name="Kali Linux"
                 avatar="https://github.com/shadowcodesyt.png"
@@ -203,17 +204,20 @@ This version should effectively communicate the risks while remaining engaging a
                 twitter="https://twit"
               ></TeamMember>
             </div>
-            <br></br>
           </div>
         )}
 
         {!isLocked && (
-              <div className="bg-base-200">
+          <>
+            <div className="bg-base-200">
               <div className="hero">
-                <div className="hero-content text-center">
+                <div className="text-center hero-content">
                   <div className="max-w-md">
-                    <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
-                      <h1 className="text-5xl font-bold  mt-10 text-nowrap">
+                    <AnimationOnScroll
+                      animateOnce={true}
+                      animateIn="zoomInDown"
+                    >
+                      <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                         Resources++📕
                       </h1>
                     </AnimationOnScroll>
@@ -222,14 +226,15 @@ This version should effectively communicate the risks while remaining engaging a
                       animateIn="slideInDown"
                       delay={700}
                     >
-                      <p className="py-6 mb-5">
-                    A collection of handcrafted and Open Source resources to get your journey started
+                      <p className="py-6 mb-5 text-sm md:text-base">
+                        A collection of handcrafted and Open Source resources to
+                        get your journey started
                       </p>
                     </AnimationOnScroll>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col w-full justify-center lg:flex-row">
+              <div className="flex flex-col justify-center w-full lg:flex-row">
                 <TeamMember
                   name="Linux Foundation"
                   avatar="https://github.com/whirlxd.png"
@@ -238,7 +243,7 @@ This version should effectively communicate the risks while remaining engaging a
                   github="https://training.linuxfoundation.org/"
                   twitter="https://training.linuxfoundation.org/"
                 ></TeamMember>
-  
+
                 <TeamMember
                   name="TODO Group"
                   avatar="https://github.com/whirl21.png"
@@ -247,7 +252,7 @@ This version should effectively communicate the risks while remaining engaging a
                   github="https://www.channelfutures.com/connectivity/todo-group-new-linux-foundation-project-spurs-open-source-adoption"
                   twitter="https://www.linkedin.com/company/todosecurity/"
                 ></TeamMember>
-  
+
                 <TeamMember
                   name="HackTheBox"
                   avatar="https://github.com/whirl21.png"
@@ -257,8 +262,8 @@ This version should effectively communicate the risks while remaining engaging a
                   twitter="https://twitter.com/whirl_21"
                 ></TeamMember>
               </div>
-              <br></br>
-              <div className="flex flex-col w-full justify-center lg:flex-row">
+
+              <div className="flex flex-col justify-center w-full lg:flex-row">
                 <TeamMember
                   name="SEQUEL"
                   avatar="https://github.com/shadowcodesyt.png"
@@ -267,7 +272,7 @@ This version should effectively communicate the risks while remaining engaging a
                   github="https://sequelpro.com/docs"
                   twitter="https://twitter.com/shadowcodesyt"
                 ></TeamMember>
-  
+
                 <TeamMember
                   name="MDN Docs"
                   avatar="https://github.com/whirl21.png"
@@ -276,7 +281,7 @@ This version should effectively communicate the risks while remaining engaging a
                   github="https://developer.mozilla.org/en-US/"
                   twitter="https://twitter.com/whirl_21"
                 ></TeamMember>
-  
+
                 <TeamMember
                   name="W3School"
                   avatar="https://github.com/whirl21.png"
@@ -286,8 +291,8 @@ This version should effectively communicate the risks while remaining engaging a
                   twitter="https://twitter.com/whirl_21"
                 ></TeamMember>
               </div>
-              <br></br>
-              <div className="flex flex-col w-full justify-center lg:flex-row">
+
+              <div className="flex flex-col justify-center w-full lg:flex-row">
                 <TeamMember
                   name="Kali Linux"
                   avatar="https://github.com/shadowcodesyt.png"
@@ -296,7 +301,7 @@ This version should effectively communicate the risks while remaining engaging a
                   github="https://www.kali.org/"
                   twitter="https://twitter.com/shadowcodesyt"
                 ></TeamMember>
-  
+
                 <TeamMember
                   name="SSL Certificate Labs"
                   avatar="https://github.com/whirl21.png"
@@ -305,7 +310,7 @@ This version should effectively communicate the risks while remaining engaging a
                   github="https://zerossl.com/"
                   twitter="https://twitter.com/whirl_21"
                 ></TeamMember>
-  
+
                 <TeamMember
                   name="Browser101"
                   avatar="https://github.com/whirl21.png"
@@ -315,28 +320,29 @@ This version should effectively communicate the risks while remaining engaging a
                   twitter="https://twit"
                 ></TeamMember>
               </div>
-              <br></br>
             </div>
+            <Footer />
+          </>
         )}
       </div>
       {isLocked && (
-        <div className="absolute inset-0 flex items-center justify-center z-20">
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
           <button
             onClick={unlockSection}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 text-white bg-blue-500 rounded"
           >
             Unlock Resources 🔑
           </button>
           <dialog id="my_modal_2" className="modal">
             <div className="modal-box">
               <form id="f">
-                <label className="input input-bordered flex items-center gap-2">
+                <label className="flex items-center gap-2 input input-bordered">
                   <input type="text" className="grow" placeholder="Search" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
                     fill="currentColor"
-                    className="h-4 w-4 opacity-70"
+                    className="w-4 h-4 opacity-70"
                   >
                     <path
                       fillRule="evenodd"
@@ -345,35 +351,35 @@ This version should effectively communicate the risks while remaining engaging a
                     />
                   </svg>
                 </label>
-                <label className="input input-bordered flex items-center gap-2">
+                <label className="flex items-center gap-2 input input-bordered">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
                     fill="currentColor"
-                    className="h-4 w-4 opacity-70"
+                    className="w-4 h-4 opacity-70"
                   >
                     <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                     <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                   </svg>
                   <input type="text" className="grow" placeholder="Email" />
                 </label>
-                <label className="input input-bordered flex items-center gap-2">
+                <label className="flex items-center gap-2 input input-bordered">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
                     fill="currentColor"
-                    className="h-4 w-4 opacity-70"
+                    className="w-4 h-4 opacity-70"
                   >
                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                   </svg>
                   <input type="text" className="grow" placeholder="Username" />
                 </label>
-                <label className="input input-bordered flex items-center gap-2">
+                <label className="flex items-center gap-2 input input-bordered">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
                     fill="currentColor"
-                    className="h-4 w-4 opacity-70"
+                    className="w-4 h-4 opacity-70"
                   >
                     <path
                       fillRule="evenodd"
@@ -396,62 +402,26 @@ This version should effectively communicate the risks while remaining engaging a
 }
 function TeamMember(props) {
   return (
-    <div
-      id="component-demo"
-      className=" items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4"
-    >
-      <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
-        <div className="bg-[#9713fb] rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl xl:mx-0 xl:w-full ">
-          <div className="dropdown">
-            <div tabindex="0"></div>
-          </div>
-          <div>
-            <div className="dropdown w-full">
-              <div tabindex="0">
-                <div className="text-center">
-                  <h1 className="text-xl text-[#77fb13] font-extrabold">
-                    {props.name}
-                  </h1>
-                </div>
-              </div>
-            </div>
-            <div className="dropdown w-full">
-              <div tabindex="0">
-                <div className="mt-2 text-center">
-                  <div className="badge badge-ghost mr-3 py-2">
-                    {props.title1}
-                  </div>
-                  <div className="badge badge-ghost mr-3 py-2">
-                    {props.title2}
-                  </div>
-                </div>
-              </div>
-              <div tabindex="0" className="dropdown-content py-2"></div>
-            </div>
-          </div>
-          <div className="dropdown dropdown-top">
-            <div tabindex="0">
-              <div className="btn-group">
-                <a
-                  href={props.github}
-                  className="btn btn-neutral btn-sm mr-1"
-                  target="_blank"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className="fill-current"
-                  >
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </AnimationOnScroll>
+    <div class="group flex max-w-sm flex-col items-center rounded-lg bg-[#9713fb] p-4 shadow-lg md:flex-row  my-5 hover:-translate-y-2 transition mx-4 md:mx-auto ">
+      <img
+        class="mx-auto mb-4 h-24 w-24 rounded-lg md:mx-0 md:mb-0 md:mr-4"
+        src="https://via.placeholder.com/150"
+        alt="Profile Image"
+      />
+
+      <div class="mx-auto flex flex-col justify-center text-center">
+        <h2 class="text-xl font-semibold group-hover:underline  transition-all duration-1000">
+          {props.name}
+        </h2>
+
+        <p class="text-green-500 italic group-hover:not-italic group-hover:font-bold">
+          {props.title1} & {props.title2}
+        </p>
+
+        <p class="mt-1 text-slate-300">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime.
+        </p>
+      </div>
     </div>
   );
 }

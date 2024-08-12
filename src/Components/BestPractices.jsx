@@ -13,10 +13,10 @@ function BestPractices() {
   return (
     <div className="bg-base-100">
       <div className="hero">
-        <div className="hero-content text-center">
+        <div className="text-center hero-content">
           <div className="max-w-md">
             <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
-              <h1 className="text-5xl font-bold  mt-10 text-nowrap">
+              <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                 /Best Practices/ 🧑‍💻
               </h1>
             </AnimationOnScroll>
@@ -33,7 +33,7 @@ function BestPractices() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full justify-center lg:flex-row">
+      <div className="flex flex-col justify-center w-full lg:flex-row">
         <AnimationOnScroll animateOnce={true} animateIn="rotateInDownLeft">
           <TeamMember
             src1={dm}
@@ -54,7 +54,7 @@ function BestPractices() {
         </AnimationOnScroll>
       </div>
       <br></br>
-      <div className="flex flex-col w-full justify-center lg:flex-row">
+      <div className="flex flex-col justify-center w-full lg:flex-row">
         <AnimationOnScroll animateOnce={true} animateIn="rotateInUpRight">
           <TeamMember
             src1={sq}
@@ -82,21 +82,34 @@ function TeamMember(props) {
   return (
     <div
       id="component-demo"
-      className=" items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4"
+      className="flex flex-col items-center gap-4 px-4 pt-1 pb-10 overflow-x-scroll overflow-y-hidden sm:px-6 md:px-8 lg:px-10 xl:grid xl:overflow-x-auto xl:px-4"
     >
-      <div className="diff aspect-[16/9] h-80 w-96 rounded-box">
+      <div className="diff aspect-[16/9] h-48 w-full sm:h-56 sm:w-3/4 md:h-64 md:w-2/3 lg:h-72 lg:w-1/2 xl:h-80 xl:w-96 rounded-box">
         <div className="diff-item-1">
           <div className="text-center">
-            <img src={props.src1} className="h-80 w-96" alt="whirl" />
+            <img
+              src={props.src1}
+              className="object-cover w-full h-full"
+              alt="whirl"
+            />
           </div>
         </div>
         <div className="diff-item-2">
-          <img src={props.src2} alt="linuxgem" />
+          <img
+            src={props.src2}
+            className="object-cover w-full h-full"
+            alt="linuxgem"
+          />
         </div>
         <div className="diff-resizer"></div>
       </div>
-      <p className="text-2xl bold text-center">{props.name}</p>
-      <a href={props.link} target="_blank" className="btn btn-accent text-center btn-outline text-sm  ">
+      <p className="text-xl font-bold text-center sm:text-2xl">{props.name}</p>
+      <a
+        href={props.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className=" btn btn-outline btn-accent hover:underline"
+      >
         {props.description}
       </a>
     </div>

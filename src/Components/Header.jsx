@@ -1,5 +1,4 @@
 import React from "react";
-import { HashLink, NavHashLink } from "react-router-hash-link";
 import Headroom from "react-headroom";
 
 function Header() {
@@ -14,12 +13,12 @@ function Header() {
       }}
     >
       <div className="navbar transparent">
-        <div className="navbar-start bg-transparent">
+        <div className="bg-transparent navbar-start">
           <div className="dropdown">
             <label tabindex="0" className="btn btn-neutral lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -34,39 +33,42 @@ function Header() {
             </label>
             <ul
               tabindex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-transparent rounded-box w-52"
+              className="p-2 mt-3 bg-transparent shadow menu menu-compact dropdown-content rounded-box w-52"
             >
               <li>
-                <a href="#features">Features</a>
+                <a href="#vulnerabilities">Vulnerabilities</a>
               </li>
               <li>
-                <a href="#faq">FAQ</a>
+                <a href="#https">HTTP(s)</a>
               </li>
               <li>
-                <a href="#team">Team</a>
+                <a href="#bestpractices">Best Practices</a>
+              </li>
+              <li>
+                <a href="#resources">Resources</a>
               </li>
             </ul>
           </div>
           <a
             href="#maine"
-            className="btn btn-ghost normal-case text-xl hove:bg-base-100"
+            className="text-xl normal-case btn btn-ghost hove:bg-base-100"
           >
             CYBERSEC101
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
+        <div className="hidden navbar-center lg:flex">
+          <ul className="p-0 menu menu-horizontal">
             <li>
-              <a href="#features">Vulnerbalities</a>
+              <a href="#vulnerabilities">Vulnerabilities</a>
             </li>
             <li>
-              <a href="#faq">HTTP(s)</a>
+              <a href="#https">HTTP(s)</a>
             </li>
             <li>
-              <a href="#prevention">Resources</a>
+              <a href="#bestpractices">Best Practices</a>
             </li>
             <li>
-              <a href="#team">Practices</a>
+              <a href="#resources">Resources</a>
             </li>
           </ul>
         </div>

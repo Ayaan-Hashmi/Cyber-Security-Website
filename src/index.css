@@ -1,9 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .underline-effect {
+    @apply relative p-0 heading-text;
+  }
+
+  .underline-effect::after {
+    @apply content-[''] absolute w-full h-2 left-0 bottom-[-4px] bg-cyan-400 origin-bottom-right hover:origin-bottom-left scale-x-0 hover:scale-x-100 transition-transform duration-300;
+  }
+
+  .heading-text {
+    @apply bg-gradient-to-br from-[#FFFFFF] to-[#AAAAAA] bg-clip-text p-4  text-6xl font-extrabold text-transparent;
+  }
+}
+/* add smooth scrolling to the page */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Roboto Mono", sans-serif;
   color: #00ff00; /* Bright green for the body background */
+  font-weight: 400;
 }
 
 h1,
@@ -14,5 +34,32 @@ h5,
 h6 {
   font-family: "Orbitron", sans-serif;
   color: #ffff00; /* Yellow for headings */
-  /* background-color: #242424; */
+  font-weight: 700;
+}
+html {
+  font-size: 100%;
+} /* 16px */
+
+h1 {
+  font-size: 5.652rem; /* 90.4px */
+}
+
+h2 {
+  font-size: 3.997rem; /* 64px */
+}
+
+h3 {
+  font-size: 2.827rem; /* 45.28px */
+}
+
+h4 {
+  font-size: 1.999rem; /* 32px */
+}
+
+h5 {
+  font-size: 1.414rem; /* 22.56px */
+}
+
+small {
+  font-size: 0.707rem; /* 11.36px */
 }

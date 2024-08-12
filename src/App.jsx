@@ -1,6 +1,5 @@
 import "./App.css";
 import React from "react";
-import { Header, Footer, Main, Features, Stats } from "./Components";
 import * as Component from "./Components";
 import "animate.css/animate.compat.css";
 
@@ -14,26 +13,26 @@ const Loader = () => {
 const Core = () => {
   return (
     <>
+      {/* @error - with faq and best practices and resources causing x overflow */}
+
       <Component.Header />
-      <section id="maine">
-        {/* <Main />
-         */}
+      <section id="main">
         <Component.UniqueHeroSection />
       </section>
-      <section className="min-h-screen" id="features">
-        <Features />
+      <section className="" id="Vulnerabilities">
+        <Component.Features />
       </section>
-      <section className="" id="faq">
+      <section className="" id="https">
         <Component.Faq />
       </section>
 
-      <section id="team">
+      <section id="bestpractices">
         <Component.BestPractice />
       </section>
-      <section id="prevention">
+      <section id="resources">
         <Component.Team />
       </section>
-      <Footer />
+      <Component.Footer />
     </>
   );
 };
@@ -42,7 +41,7 @@ function App() {
   React.useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 27000); // 27k
+    }, 1); // 27k
   }, []);
   return <>{loading ? <Core /> : <Loader />}</>;
 }

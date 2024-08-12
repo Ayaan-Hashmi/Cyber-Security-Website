@@ -17,7 +17,7 @@ const RotatingWords = ({ words }) => {
         {words.map((word, index) => (
           <span
             key={index}
-            className={`transition-opacity duration-60 ${
+            className={` text-[#00ff00] transition-opacity duration-60 ${
               index === currentWordIndex ? "opacity-100" : "opacity-0"
             }`}
           >

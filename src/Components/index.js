@@ -1,12 +1,8 @@
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
-export { default as Main } from "./Hero";
-export { default as Features } from "./Features";
-export { default as Stats } from "./Stats";
-export { default as Invite } from "./Invite";
+export { default as Features } from "./Vuln";
 export { default as Faq } from "./Faq";
-export { default as Team } from "./Team";
-export { default as Loader } from "./Loader";
+export { default as Team } from "./Resources";
 export { default as UniqueHeroSection } from "./UniqueHero";
 export { default as BestPractice } from "./BestPractices";
 export { default as HackerLoadingScreen } from "./HackLoad";

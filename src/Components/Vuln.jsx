@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import "./blur.css";
 
 function Features() {
   // Rest of your component...
@@ -8,10 +7,10 @@ function Features() {
   return (
     <>
       <div className="hero bg-base-100 ">
-        <div className="hero-content text-center">
+        <div className="text-center hero-content">
           <div className="max-w-md">
             <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
-              <h1 className="text-5xl font-bold mb-10 mt-10 ">
+              <h1 className="mt-10 mb-10 text-5xl font-bold ">
                 [ Vulnerbilities ]
               </h1>
             </AnimationOnScroll>
@@ -20,15 +19,15 @@ function Features() {
               animateIn="slideInDown"
               delay={700}
             >
-              <p className="py- mb-5">The way hackers exploit your website</p>
+              <p className="mb-5 py-">The way hackers exploit your website</p>
             </AnimationOnScroll>
           </div>
         </div>
       </div>
 
-      <div className="lg:flex flex-col w-full  justify-center lg:flex-row sm:carousel bg-base-100">
+      <div className="flex-col justify-center w-full lg:flex lg:flex-row sm:carousel">
         <AnimationOnScroll animateOnce={true} animateIn="zoomInLeft">
-          <FeatureCard
+          <FeatureCardd
             title="XSS Attacks"
             desc="Inject malicious scripts into web apps, exploiting vulnerabilities to steal data or hijack sessions.
 "
@@ -37,19 +36,19 @@ function Features() {
           />
         </AnimationOnScroll>
 
-        <div className="divider lg:divider-horizontal mx-auto"></div>
+        <div className="mx-auto divider lg:divider-horizontal"></div>
 
         <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
-          <FeatureCard
+          <FeatureCardd
             title="SQL INJECTION"
             desc="Compromise databases via unauthorized queries, enabling data manipulation or exposure."
             longdesc="SQL Injection (SQLi) is a type of security vulnerability typically found in web applications that interact with databases. SQLi attacks enable attackers to execute arbitrary SQL queries within the database used by the application. An SQL injection vulnerability may be used by attackers to bypass authentication, extract sensitive data, modify or delete records, and perform administrative operations on the database."
             previewImage="https://t4.ftcdn.net/jpg/02/32/33/37/360_F_232333735_VB5UjyqrqxO9OQWeeiRiRzYvyd9iJY2f.jpg"
           />
         </AnimationOnScroll>
-        <div className="divider lg:divider-horizontal mx-auto"></div>
+        <div className="mx-auto divider lg:divider-horizontal"></div>
         <AnimationOnScroll animateOnce={true} animateIn="zoomInRight">
-          <FeatureCard
+          <FeatureCardd
             title="LFI/RFI"
             longdesc="Local File Inclusion (LFI) / Remote File Inclusion (RFI) are types of security vulnerabilities commonly found in web applications. LFI allows attackers to include files from the server's filesystem, while RFI allows the inclusion of files from remote servers. These vulnerabilities may be exploited to execute arbitrary code, disclose sensitive information, or escalate privileges within the server hosting the web application."
             desc="Allow attackers to read local files without relying on environment variables, posing a significant security risk.
@@ -59,9 +58,9 @@ function Features() {
         </AnimationOnScroll>
       </div>
 
-      <div className="flex flex-col w-full  justify-center lg:flex-row bg-base-100">
+      <div className="flex flex-col justify-center w-full mt-8 mb-6 lg:flex-row">
         <AnimationOnScroll animateOnce={true} animateIn="zoomInLeft">
-          <FeatureCard
+          <FeatureCardd
             title="SSI Injection"
             longdesc="Server-Side Includes (SSI) Injection is a type of security vulnerability found in web applications that use SSI directives. SSI injection attacks enable attackers to inject and execute arbitrary SSI directives on the server. This can be used to read sensitive files, execute server-side commands, or modify the content delivered to the client, potentially leading to unauthorized access or data manipulation.
 
@@ -71,9 +70,9 @@ function Features() {
             previewImage="https://www.creativefabrica.com/wp-content/uploads/2020/02/09/server-Graphics-1-1-580x387.jpg"
           />
         </AnimationOnScroll>
-        <div className="divider lg:divider-horizontal mx-auto"></div>
+        <div className="mx-auto divider lg:divider-horizontal"></div>
         <AnimationOnScroll animateOnce={true} animateIn="zoomInRight">
-          <FeatureCard
+          <FeatureCardd
             title="RCE"
             longdesc="Remote Code Execution (RCE) is a type of security vulnerability that allows attackers to execute arbitrary code on a remote server. RCE vulnerabilities can be exploited through various means, such as injecting malicious code via web applications or exploiting flaws in software running on the server. Successful exploitation of RCE can lead to complete control over the affected system, allowing attackers to steal data, disrupt services, or deploy malware."
             desc="Enables execution of arbitrary commands on a remote host, granting full control over the targeted system.
@@ -121,7 +120,7 @@ function FeatureCard(props) {
             open={isModalOpen}
             onClose={closeModal}
           >
-            <div className="modal-box ease-in-out delay-50 bg-base-300 shadow-2xl">
+            <div className="ease-in-out shadow-2xl modal-box delay-50 bg-base-300">
               <figure className="px-10 pt-10 ">
                 <img
                   src={props.previewImage}
@@ -132,7 +131,7 @@ function FeatureCard(props) {
                 />
               </figure>
 
-              <div className="card-body items-center text-center">
+              <div className="items-center text-center card-body">
                 <h2 className="card-title">{props.title}</h2>
 
                 <div className="card-actions ">{props.longdesc}</div>
@@ -153,7 +152,7 @@ function FeatureCard(props) {
               width={200}
             />
           </figure>
-          <div className="card-body items-center text-center">
+          <div className="items-center text-center card-body">
             <h2 className="card-title">{props.title}</h2>
 
             <div className="card-actions">{props.desc}</div>
@@ -164,3 +163,30 @@ function FeatureCard(props) {
   );
 }
 export default Features;
+function FeatureCardd(props) {
+  return (
+    <div class="  mx-auto flex w-80 md:w-96 flex-col rounded-2xl bg-purple-200 shadow-xl h-auto hover:bg-purple-300 transition duration-150 hover:scale-90 hover:opacity-75">
+      <figure class="flex items-center justify-center rounded-2xl">
+        <img
+          src="https://tailwind-generator.b-cdn.net/images/card-generator/tailwind-card-generator-card-preview.png"
+          alt="Card Preview"
+          class="rounded-t-xl"
+        />
+      </figure>
+      <div class="flex flex-col p-8">
+        <div class="pb-6 text-2xl font-bold uppercase text-[#374151]">
+          Generator
+        </div>
+        <div class="text-lg text-[#374151]">
+          Leverasasasasage a graphical editor to create beautiful web
+          components.
+        </div>
+        <div class="flex justify-end pt-6">
+          <button class="w-full transform rounded-lg bg-[#7e22ce] p-3 text-base font-bold text-[#ffffff] transition-transform hover:bg-purple-800 active:scale-95">
+            Continue Reading
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
