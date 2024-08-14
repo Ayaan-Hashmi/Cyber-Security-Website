@@ -48,7 +48,7 @@ const UniqueHeroSection = () => {
               "Ransomware",
             ]}
           />
-          <p class="text-lg md:text-xl mb-8 mt-2  font-semibold">
+          <p class="text-lg md:text-xl mb-8 mt-2  font-medium">
             In the time it took for you to land here, countless cyber threats
             have circled the globe. Every second, vulnerabilities put websites
             at risk. Learn how to fortify your defenses and ensure your digital
@@ -65,7 +65,7 @@ const UniqueHeroSection = () => {
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 mt-8 md:mt-0 hidden  md:flex justify-center md:justify-end ">
+        <div className="justify-center hidden w-full mt-8 md:w-1/2 md:mt-0 lg:flex lg:justify-end">
           <Globe className="" />
         </div>
       </div>

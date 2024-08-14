@@ -129,11 +129,11 @@ function FaqCard(props) {
           {/* modal start */}
           <dialog
             id={props.question}
-            className="modal"
+            className="modal modal-bottom"
             open={isModalOpen}
             onClose={closeModal}
           >
-            <div className="modal-box  ease-in-out delay-50 bg-[#9713fb] p-5 rounded-lg w-full max-w-lg mx-auto ">
+            <div className="w-full max-w-lg p-5 mx-auto ease-in-out bg-transparent rounded-lg modal-box delay-50 ">
               <div className="w-full overflow-x-hidden mockup-code h-45 text-balance">
                 <pre data-prefix="$:" className="text-warning">
                   <code>{props.question}</code>
@@ -147,7 +147,7 @@ function FaqCard(props) {
             </div>
 
             <form method="dialog" className="modal-backdrop">
-              <button onClick={closeModal} className="btn btn-primary">
+              <button onClick={closeModal} className="">
                 close
               </button>
             </form>

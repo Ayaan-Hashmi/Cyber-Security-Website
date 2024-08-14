@@ -75,7 +75,7 @@ function Features() {
           <FeatureCardd
             title="RCE"
             longdesc="Remote Code Execution (RCE) is a type of security vulnerability that allows attackers to execute arbitrary code on a remote server. RCE vulnerabilities can be exploited through various means, such as injecting malicious code via web applications or exploiting flaws in software running on the server. Successful exploitation of RCE can lead to complete control over the affected system, allowing attackers to steal data, disrupt services, or deploy malware."
-            desc="Enables execution of arbitrary commands on a remote host, granting full control over the targeted system.
+            desc="Enables execution of arbitrary commands on a remote host, granting full control of the webserver.
 "
             previewImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAkBnAbYjhpOmO-yyUGRks56CeoZAnbFySaw&usqp=CAU"
           />
@@ -87,100 +87,22 @@ function Features() {
   );
 }
 
-function FeatureCard(props) {
-  // Rest of your component...
-  const applyBlur = () => {
-    document.body.style.filter = "blur(10px)";
-  };
-
-  const removeBlur = () => {
-    document.body.style.filter = "none";
-  };
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    document.getElementById(props.title).showModal();
-    setIsModalOpen(true);
-    applyBlur(); // Apply blur when opening the modal
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    removeBlur(); // Remove blur when closing the modal
-    document.getElementById(props.title).close();
-  };
-  return (
-    <div className=" grid  card m-1 w-96 bg-base-100 transition ease-in-out delay-100 shadow-2xl hover:bg-[#9713fb] hover:font-extrabold">
-      {/* modal end */}
-      <div className={isModalOpen ? "blur-background" : ""}>
-        <div onClick={openModal}>
-          <dialog
-            id={props.title}
-            className="modal"
-            open={isModalOpen}
-            onClose={closeModal}
-          >
-            <div className="ease-in-out shadow-2xl modal-box delay-50 bg-base-300">
-              <figure className="px-10 pt-10 ">
-                <img
-                  src={props.previewImage}
-                  alt="Feature"
-                  className="rounded-xl"
-                  height={200}
-                  width={200}
-                />
-              </figure>
-
-              <div className="items-center text-center card-body">
-                <h2 className="card-title">{props.title}</h2>
-
-                <div className="card-actions ">{props.longdesc}</div>
-              </div>
-            </div>
-
-            <form method="dialog" className="modal-backdrop">
-              <button onClick={closeModal}>close</button>
-            </form>
-          </dialog>
-
-          <figure className="px-10 pt-10">
-            <img
-              src={props.previewImage}
-              alt="Feature"
-              className="rounded-xl"
-              height={200}
-              width={200}
-            />
-          </figure>
-          <div className="items-center text-center card-body">
-            <h2 className="card-title">{props.title}</h2>
-
-            <div className="card-actions">{props.desc}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 export default Features;
 function FeatureCardd(props) {
   return (
     <div class="  mx-auto flex w-80 md:w-96 flex-col rounded-2xl bg-purple-200 shadow-xl h-auto hover:bg-purple-300 transition duration-150 hover:scale-90 hover:opacity-75">
       <figure class="flex items-center justify-center rounded-2xl">
         <img
-          src="https://tailwind-generator.b-cdn.net/images/card-generator/tailwind-card-generator-card-preview.png"
+          src={props.previewImage}
           alt="Card Preview"
-          class="rounded-t-xl"
+          class="rounded-t-xl h-52"
         />
       </figure>
       <div class="flex flex-col p-8">
         <div class="pb-6 text-2xl font-bold uppercase text-[#374151]">
-          Generator
+          {props.title}
         </div>
-        <div class="text-lg text-[#374151]">
-          Leverasasasasage a graphical editor to create beautiful web
-          components.
-        </div>
+        <div class="text-lg text-[#374151]">{props.desc}</div>
         <div class="flex justify-end pt-6">
           <button class="w-full transform rounded-lg bg-[#7e22ce] p-3 text-base font-bold text-[#ffffff] transition-transform hover:bg-purple-800 active:scale-95">
             Continue Reading

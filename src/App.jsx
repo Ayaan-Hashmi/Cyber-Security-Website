@@ -2,6 +2,8 @@ import "./App.css";
 import React from "react";
 import * as Component from "./Components";
 import "animate.css/animate.compat.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import * as Pages from "./pages";
 
 const Loader = () => {
   return (
@@ -28,6 +30,7 @@ const Core = () => {
 
       <section id="bestpractices">
         <Component.BestPractice />
+        <Component.Quiz />
       </section>
       <section id="resources">
         <Component.Team />
@@ -43,7 +46,48 @@ function App() {
       setLoaded(true);
     }, 1); // 27k
   }, []);
-  return <>{loading ? <Core /> : <Loader />}</>;
+  console.log(Pages.cybersecurity);
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={loading ? <Core /> : <Loader />} />
+
+          {Object.entries(Pages).map(([key, value]) => {
+            return (
+              <Route
+                path={`/${value.title}`}
+                element={
+                  <>
+                    <Component.Header />
+                    <Component.Info
+                      title={value.title}
+                      author={value.author}
+                      time={value.time}
+                      intro={value.intro}
+                      body={value.body}
+                      conclusion={value.conclusion}
+                    />
+                    <Component.Footer />
+                  </>
+                }
+              />
+            );
+          })}
+          <Route
+            path="/blog"
+            element={
+              <>
+                <Component.Header></Component.Header>
+                <Component.Info />
+                <Component.Footer></Component.Footer>
+              </>
+            }
+          />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 
 export default App;

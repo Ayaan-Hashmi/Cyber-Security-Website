@@ -12,8 +12,8 @@ function Header() {
         opacity: 50,
       }}
     >
-      <div className="navbar transparent">
-        <div className="bg-transparent navbar-start">
+      <div className="navbar bg-base-300">
+        <div className=" navbar-start">
           <div className="dropdown">
             <label tabindex="0" className="btn btn-neutral lg:hidden">
               <svg
@@ -50,7 +50,7 @@ function Header() {
             </ul>
           </div>
           <a
-            href="#maine"
+            href="/"
             className="text-xl normal-case btn btn-ghost hove:bg-base-100"
           >
             CYBERSEC101
@@ -59,10 +59,10 @@ function Header() {
         <div className="hidden navbar-center lg:flex">
           <ul className="p-0 menu menu-horizontal">
             <li>
-              <a href="#vulnerabilities">Vulnerabilities</a>
+              <a href="/#vulnerabilities">Vulnerabilities</a>
             </li>
             <li>
-              <a href="#https">HTTP(s)</a>
+              <a href="/#https">HTTP(s)</a>
             </li>
             <li>
               <a href="#bestpractices">Best Practices</a>

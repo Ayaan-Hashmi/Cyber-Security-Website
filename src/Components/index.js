@@ -6,3 +6,5 @@ export { default as Team } from "./Resources";
 export { default as UniqueHeroSection } from "./UniqueHero";
 export { default as BestPractice } from "./BestPractices";
 export { default as HackerLoadingScreen } from "./HackLoad";
+export { default as Info } from "./InfoPage";
+export { default as Quiz } from "./Quiz";
