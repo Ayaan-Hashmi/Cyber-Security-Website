@@ -118,7 +118,7 @@ function globe() {
         arcDashGap={() => Math.random()}
         arcDashAnimateTime={() => Math.random() * 4000 + 500}
         height={700}
-        width={700}
+        width={800}
         backgroundColor="rgba(0,0,0,0)"
         className="mx-auto"
       />

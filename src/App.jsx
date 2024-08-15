@@ -32,6 +32,9 @@ const Core = () => {
         <Component.BestPractice />
         <Component.Quiz />
       </section>
+      <section id="encryption">
+        <Component.EncryptionDemo />
+      </section>
       <section id="resources">
         <Component.Team />
       </section>

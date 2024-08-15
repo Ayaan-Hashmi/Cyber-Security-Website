@@ -92,7 +92,7 @@ function Faq() {
         <a
           href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
           target="_blank"
-          className="flex flex-col justify-center mx-auto mt-12 btn btn-primary btn-wide "
+          className="flex flex-col justify-center mx-auto mt-12 btn btn-primary btn-wide hover:translate-y-2"
         >
           [ Learn More ]
         </a>
@@ -155,7 +155,7 @@ function FaqCard(props) {
           {/* modal close */}
           <div
             onClick={openModal}
-            className="max-w-sm mb-3 overflow-auto cursor-pointer md:mx-auto mockup-code text-balance md:max-w-md"
+            className="max-w-sm mb-3 overflow-auto transition duration-100 cursor-pointer md:mx-auto mockup-code text-balance md:max-w-md hover:shadow-xl hover:scale-105"
           >
             <pre data-prefix="$:" className="text-warning">
               <code>{props.question}</code>
