@@ -1,0 +1,240 @@
+1. What is the primary focus of the Linux Foundation?
+   - A) Open-source hardware development
+   - B) Promoting proprietary software
+   - C) Promoting open-source software and collaboration
+   - D) Developing closed-source operating systems
+
+   *Correct Answer: C) Promoting open-source software and collaboration*
+
+2. The TODO Group is an initiative under the Linux Foundation that focuses on what?
+   - A) Financial accounting for open-source projects
+   - B) Automating software testing
+   - C) Best practices and tools for open-source program management
+   - D) Developing video games
+
+   *Correct Answer: C) Best practices and tools for open-source program management*
+
+3. Hack The Box is primarily designed for what purpose?
+   - A) Social networking
+   - B) Cybersecurity training and practice
+   - C) Software development
+   - D) Video editing
+
+   *Correct Answer: B) Cybersecurity training and practice*
+
+4. Which of the following is NOT a common SQL command?
+   - A) SELECT
+   - B) INSERT
+   - C) UPDATE
+   - D) FORMAT
+
+   *Correct Answer: D) FORMAT*
+
+5. MDN Web Docs is best known for providing documentation for which of the following?
+   - A) Networking protocols
+   - B) Programming languages and web standards
+   - C) Database management
+   - D) Mobile app development
+
+   *Correct Answer: B) Programming languages and web standards*
+
+6. Kali Linux is primarily used for which of the following activities?
+   - A) Graphic design
+   - B) Penetration testing and ethical hacking
+   - C) Data analysis
+   - D) Game development
+
+   *Correct Answer: B) Penetration testing and ethical hacking*
+
+7. What is the main purpose of SSL Certificate Labs?
+   - A) Encrypting email communications
+   - B) Testing and evaluating SSL certificates
+   - C) Designing SSL protocols
+   - D) Writing SSL certificates for websites
+
+   *Correct Answer: B) Testing and evaluating SSL certificates*
+
+8. Netcraft’s browser extension is primarily designed to protect against which type of cyber threat?
+   - A) DDoS attacks
+   - B) Phishing attacks
+   - C) SQL injections
+   - D) Bluetooth hacking
+
+   *Correct Answer: B) Phishing attacks*
+
+9. Which project under the Linux Foundation focuses on containerized application management?
+   - A) Kubernetes
+   - B) Android
+   - C) Jenkins
+   - D) Apache Kafka
+
+   *Correct Answer: A) Kubernetes*
+
+10. One of the key goals of the TODO Group is to:
+    - A) Standardize open-source licensing across all platforms
+    - B) Promote the use of proprietary software
+    - C) Provide a forum for organizations to collaborate on open-source program management
+    - D) Develop new programming languages
+
+    *Correct Answer: C) Provide a forum for organizations to collaborate on open-source program management*
+
+11. Which skill is most enhanced by participating in Hack The Box?
+    - A) Web development
+    - B) Cybersecurity and ethical hacking
+    - C) Graphic design
+    - D) Digital marketing
+
+    *Correct Answer: B) Cybersecurity and ethical hacking*
+
+12. What does the SQL command ‘JOIN’ do?
+    - A) Deletes records from a table
+    - B) Combines rows from two or more tables based on a related column
+    - C) Creates a new table
+    - D) Updates records in a table
+
+    *Correct Answer: B) Combines rows from two or more tables based on a related column*
+
+13. MDN Web Docs is a resource developed and maintained by which company?
+    - A) Google
+    - B) Microsoft
+    - C) Mozilla
+    - D) Apple
+
+    *Correct Answer: C) Mozilla*
+
+14. Kali Linux is based on which Linux distribution?
+    - A) Fedora
+    - B) Ubuntu
+    - C) Debian
+    - D) Arch Linux
+
+    *Correct Answer: C) Debian*
+
+15. SSL Certificate Labs provides which of the following services?
+    - A) Creating SSL certificates
+    - B) Rating the security of SSL/TLS configurations
+    - C) Selling encryption software
+    - D) Managing DNS records
+
+    *Correct Answer: B) Rating the security of SSL/TLS configurations*
+
+16. Which feature of Netcraft helps users verify the legitimacy of websites?
+    - A) Ad-blocking
+    - B) Detailed site reports
+    - C) VPN services
+    - D) Password management
+
+    *Correct Answer: B) Detailed site reports*
+
+17. The Linux Foundation was established primarily to support which operating system?
+    - A) Windows
+    - B) macOS
+    - C) Linux
+    - D) Android
+
+    *Correct Answer: C) Linux*
+
+18. Which of the following best describes the target audience of the TODO Group?
+    - A) Independent developers
+    - B) Corporate open-source program managers
+    - C) Graphic designers
+    - D) Digital marketers
+
+    *Correct Answer: B) Corporate open-source program managers*
+
+19. Which type of activity is NOT typically part of Hack The Box challenges?
+    - A) Exploiting vulnerabilities
+    - B) Writing malware
+    - C) Gaining root access
+    - D) Reverse engineering
+
+    *Correct Answer: B) Writing malware*
+
+20. Which SQL command is used to remove records from a database?
+    - A) DELETE
+    - B) DROP
+    - C) REMOVE
+    - D) CUT
+
+    *Correct Answer: A) DELETE*
+
+21. MDN Web Docs offers detailed guides and documentation for which of the following languages?
+    - A) Python, Java, Ruby
+    - B) JavaScript, HTML, CSS
+    - C) Swift, Kotlin, Dart
+    - D) C++, C#, Java
+
+    *Correct Answer: B) JavaScript, HTML, CSS*
+
+22. Which of the following is a popular tool included in Kali Linux for network security testing?
+    - A) Adobe Photoshop
+    - B) Wireshark
+    - C) Blender
+    - D) Final Cut Pro
+
+    *Correct Answer: B) Wireshark*
+
+23. What is a primary benefit of using SSL/TLS on a website?
+    - A) Faster load times
+    - B) Improved SEO ranking
+    - C) Secure communication over the internet
+    - D) Reduced data usage
+
+    *Correct Answer: C) Secure communication over the internet*
+
+24. Which of the following best describes the Netcraft community’s role in cybersecurity?
+    - A) Developing new encryption algorithms
+    - B) Reporting phishing sites
+    - C) Writing antivirus software
+    - D) Selling cybersecurity solutions
+
+    *Correct Answer: B) Reporting phishing sites*
+
+25. Which Linux Foundation project focuses on cloud-native computing?
+    - A) Kubernetes
+    - B) OpenStack
+    - C) TensorFlow
+    - D) Node.js
+
+    *Correct Answer: A) Kubernetes*
+
+26. What does the acronym TODO stand for in the context of the Linux Foundation's TODO Group?
+    - A) Technology Organization Development Operations
+    - B) Tactical Open-source Deployment Objectives
+    - C) Talk Openly, Develop Openly
+    - D) To Do Openly
+
+    *Correct Answer: D) To Do Openly*
+
+27. Hack The Box offers challenges in which of the following areas?
+    - A) Web application exploitation
+    - B) Binary exploitation
+    - C) Reverse engineering
+    - D) All of the above
+
+    *Correct Answer: D) All of the above*
+
+28. What is the purpose of the SQL 'GROUP BY' clause?
+    - A) To merge two tables
+    - B) To group rows that have the same values in specified columns
+    - C) To delete a group of records
+    - D) To add a group of records
+
+    *Correct Answer: B) To group rows that have the same values in specified columns*
+
+29. Which of the following is NOT a feature of MDN Web Docs?
+    - A) Interactive examples
+    - B) Documentation for web technologies
+    - C) A marketplace for web tools
+    - D) Developer guides
+
+    *Correct Answer: C) A marketplace for web tools*
+
+30. Which tool included in Kali Linux is specifically used for network vulnerability scanning and security auditing?
+
+   - A) Metasploit
+   - B) Nmap
+   - C) Burp Suite
+   - D) Aircrack-ng
+
+   *Correct Answer: B) Nmap*

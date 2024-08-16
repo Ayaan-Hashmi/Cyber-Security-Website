@@ -134,13 +134,25 @@ function encryptionDemo() {
           </div>
           <div className="flex flex-col space-y-8 lg:w-1/2">
             <ul className="steps">
-              <li className={`step ${progress > 0 ? "step-primary" : ""}`}>
+              <li
+                className={`step  transition-colors duration-500 ${
+                  progress > 0 ? "step-primary" : ""
+                }`}
+              >
                 🗝️
               </li>
-              <li className={`step ${progress > 1 ? "step-primary" : ""}`}>
+              <li
+                className={`step transition-colors duration-500 ${
+                  progress > 1 ? "step-primary" : ""
+                }`}
+              >
                 🔒
               </li>
-              <li className={`step ${showCipherText ? "" : "step-primary"}`}>
+              <li
+                className={`step transition-colors duration-500 ${
+                  showCipherText ? "" : "step-primary"
+                }`}
+              >
                 🔐
               </li>
             </ul>
@@ -165,7 +177,7 @@ function encryptionDemo() {
               </label>
               <input
                 type="text"
-                placeholder="Eg: YAGDGGD"
+                placeholder="Eg: sRgByUK"
                 value={keyValue}
                 onChange={handleKeyChange}
                 className="w-full max-w-lg text-gray-100 bg-gray-800 input input-bordered"

@@ -21,20 +21,19 @@ const Core = () => {
       <section id="main">
         <Component.UniqueHeroSection />
       </section>
-      <section className="" id="Vulnerabilities">
+      <section className="" id="vulnerabilities">
         <Component.Features />
       </section>
       <section className="" id="https">
         <Component.Faq />
       </section>
-
-      <section id="bestpractices">
-        <Component.BestPractice />
-        <Component.Quiz />
-      </section>
       <section id="encryption">
         <Component.EncryptionDemo />
       </section>
+      <section id="bestpractices">
+        <Component.BestPractice />
+      </section>
+
       <section id="resources">
         <Component.Team />
       </section>
@@ -59,7 +58,7 @@ function App() {
           {Object.entries(Pages).map(([key, value]) => {
             return (
               <Route
-                path={`/${value.title}`}
+                path={`/${value.url}`}
                 element={
                   <>
                     <Component.Header />
@@ -78,11 +77,11 @@ function App() {
             );
           })}
           <Route
-            path="/blog"
+            path="/quiz"
             element={
               <>
                 <Component.Header></Component.Header>
-                <Component.Info />
+                <Component.Quiz />
                 <Component.Footer></Component.Footer>
               </>
             }

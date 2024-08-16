@@ -61,7 +61,7 @@ function BestPractices() {
             src2={dq}
             name="SQL Injection"
             description="Learn Form Validation"
-            link="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation"
+            link="/form-validation"
           ></TeamMember>
         </AnimationOnScroll>
         <AnimationOnScroll animateOnce={true} animateIn="rotateInUpLeft">

@@ -1,34 +1,65 @@
+/*
+Custom Templating & Page Generation by whirlxd ( whirlxd.xyz )
+Example Object Structure:
+const Page = {
+  title: "Learning Form Validation in Web Development",
+  url: "/form-validation",
+  author: "Ayaan Hashmi",
+  time: "7",
+  body: content in markdown,
+};
+*/
+
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function InfoPage(props) {
   return (
-    <div>
-      <body class="bg-base-200 text-gray-800 min-h-screen">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 class="text-3xl sm:text-4xl font-bold text-center mb-4 leading-tight sm:leading-none">
-            {props.title}
-          </h1>
+    <div className="min-h-screen text-gray-800 bg-base-200">
+      <div className="max-w-3xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
+        <h1 className="mb-4 text-3xl font-bold leading-tight text-center sm:text-4xl sm:leading-none">
+          {props.title}
+        </h1>
 
-          <div class="text-center text-gray-400 mb-8">
-            <span>
-              By:{" "}
-              <span class="text-gray-500 font-semibold underline">
-                {props.author}
-              </span>
+        <div className="mb-8 text-center text-gray-400">
+          <span>
+            By:{" "}
+            <span className="font-semibold text-gray-500 underline">
+              {props.author}
             </span>
-            <span class="mx-2">•</span>
-            <span>{props.time} min read</span>
-          </div>
-
-          <article class="prose prose-lg sm:prose-xl mx-auto text-center text-slate-300 ">
-            <p>{props.intro}</p>
-
-            <p>{props.body}</p>
-
-            <p>{props.conclusion}</p>
-          </article>
+          </span>
+          <span className="mx-2">•</span>
+          <span>{props.time} min read</span>
         </div>
-      </body>
+
+        <article className="mx-auto text-center text-ellipsis text-slate-300">
+          <ReactMarkdown
+            components={{
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || "");
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    style={dark}
+                    language={match[1]}
+                    PreTag="div"
+                    {...props}
+                  >
+                    {String(children).replace(/\n$/, "")}
+                  </SyntaxHighlighter>
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          >
+            {props.body}
+          </ReactMarkdown>
+        </article>
+      </div>
     </div>
   );
 }

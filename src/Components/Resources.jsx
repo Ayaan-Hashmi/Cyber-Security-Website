@@ -17,7 +17,6 @@ function Team() {
   };
 
   useEffect(() => {
-    //passing getData method to the lifecycle method
     getData();
   }, []);
 
@@ -29,11 +28,13 @@ function Team() {
     let userAnswers = "";
 
     MySwal.fire({
-      title: <p>Fill the form to get access</p>,
+      title: <p>Fill the form to get access to exclusive content</p>,
       input: "text",
       icon: "info",
       inputLabel: "Your Name",
-      showCancelButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+
       inputValue: "",
       inputValidator: (value) => {
         if (!regName.test(value)) {
@@ -42,12 +43,16 @@ function Team() {
       },
     }).then((result) => {
       const answer1 = result.value;
+
+      localStorage.setItem("name", answer1);
       MySwal.fire({
         title: <p>Please answer honestly</p>,
         input: "text",
         icon: "info",
         inputLabel: "Your Phone Number",
         showCancelButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
         inputValue: "",
         inputValidator: (value) => {
           if (!regex.test(value)) {
@@ -55,37 +60,50 @@ function Team() {
           }
         },
       }).then((result) => {
-        const answer2 = result.value;
-        userAnswers += `
-Whoa, ${answer1}!
+        // fire the final alert telling user to download the file
+        Swal.fire({
+          title: "Download Exclusive Content",
+          text: "Click the button below to download the resources.",
+          icon: "info",
+          showCancelButton: false,
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          confirmButtonText: "Download",
+        }).then(() => {
+          const answer2 = result.value;
+          userAnswers += `
+        Whoa, ${answer1}!
 
-You just shared some personal info for access to resources:
+        You just shared some personal info for access to exclusive content:
 
-• Your Name: ${answer1}
-• Your Phone Number: ${answer2}
-• Your IP Address: ${ip} [which i was able to get when you visited this site and submitted the form]
+        • Your Name: ${answer1}
+        • Your Phone Number: ${answer2}
+        • Your IP Address: ${ip} [which i was able to get when you visited this site and submitted the form]
 
-Did you realize you gave all that away just by filling out a form?
+        Did you realize you gave all that away just by filling out a form? 
+        Don't worry, I'm not storing any of it. But others might be! 
+        Do you also realize that you're downloading a file from a random website? 
 
-A Friendly Heads-Up:
+        A Friendly Heads-Up:
 
-- Think twice before sharing your personal information online, especially for small perks or extras.
-- Be cautious when downloading files from sources you don't trust.
-- Remember, if a website isn't secure, your data might end up in the hands of third-party actors.
-- Don't blindly trust website developers or forms asking for personal details.
+        - Think twice before sharing your personal information online, especially for small perks or extras.
+        - Be cautious when downloading files from sources you don't trust.
+        - Remember, if a website isn't secure, your data might end up in the hands of third-party actors.
+        - Don't blindly trust website developers or forms asking for personal details.
 
 
-Stay smart, stay safe, and keep your info secure!
+        Stay smart, stay safe, and keep your info secure!
 
-This version should effectively communicate the risks while remaining engaging and user-friendly.`;
-        console.log("User answers:", userAnswers);
-        const blob = new Blob([userAnswers], { type: "text/plain" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url; // Specify the file URL
-        link.download = "extraresources.txt"; // Specify the filename
-        link.click();
-        setIsLocked(false);
+        This version should effectively communicate the risks while remaining engaging and user-friendly.`;
+          console.log("User answers:", userAnswers);
+          const blob = new Blob([userAnswers], { type: "text/plain" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url; // Specify the file URL
+          link.download = "extraresources.txt"; // Specify the filename
+          link.click();
+          setIsLocked(false);
+        });
       });
     });
   };
@@ -94,233 +112,11 @@ This version should effectively communicate the risks while remaining engaging a
       <div
         className={`${isLocked ? "blur-section" : ""} absolute inset-0 z-10`}
       >
-        {isLocked && (
-          <div className="bg-base-200">
-            <div className="hero">
-              <div className="text-center hero-content">
-                <div className="max-w-md">
-                  <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
-                    <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
-                      Resources++📕
-                    </h1>
-                  </AnimationOnScroll>
-                  <AnimationOnScroll
-                    animateOnce={true}
-                    animateIn="slideInDown"
-                    delay={200}
-                  >
-                    <p className="py-6 mb-5">
-                      {/* rephrase to make it more proffesional and engaging */}
-                      A collection of handcrafted and open source resources to
-                      get your journey started
-                    </p>
-                  </AnimationOnScroll>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center w-full lg:flex-row">
-              <TeamMember
-                name="Linux Foundation"
-                avatar="https://github.com/whirlxd.png"
-                title1="Learning "
-                title2="Projects"
-                github="https://training.linuxfoundation.org/"
-                twitter="https://training.linuxfoundation.org/"
-              ></TeamMember>
-
-              <TeamMember
-                name="TODO Group"
-                avatar="https://github.com/whirl21.png"
-                title1="Projects"
-                title2="Learning"
-                github="https://www.channelfutures.com/connectivity/todo-group-new-linux-foundation-project-spurs-open-source-adoption"
-                twitter="https://www.linkedin.com/company/todosecurity/"
-              ></TeamMember>
-
-              <TeamMember
-                name="HackTheBox"
-                avatar="https://github.com/whirl21.png"
-                title1="CTF"
-                title2="Learning"
-                github="https://www.hackthebox.com/"
-                twitter="https://twitter.com/whirl_21"
-              ></TeamMember>
-            </div>
-
-            <div className="flex flex-col justify-center w-full lg:flex-row">
-              <TeamMember
-                name="SEQUEL"
-                avatar="https://github.com/shadowcodesyt.png"
-                title1="Language"
-                title2="Database"
-                github="https://sequelpro.com/docs"
-                twitter="https://twitter.com/shadowcodesyt"
-              ></TeamMember>
-
-              <TeamMember
-                name="MDN Docs"
-                avatar="https://github.com/whirl21.png"
-                title1="Documentation"
-                title2="Best Practices"
-                github="https://developer.mozilla.org/en-US/"
-                twitter="https://twitter.com/whirl_21"
-              ></TeamMember>
-
-              <TeamMember
-                name="W3School"
-                avatar="https://github.com/whirl21.png"
-                title1="Documentation"
-                title2="Learning"
-                github="https://www.w3schools.com/"
-                twitter="https://twitter.com/whirl_21"
-              ></TeamMember>
-            </div>
-
-            <div className="flex flex-col justify-center w-full lg:flex-row">
-              <TeamMember
-                name="Kali Linux"
-                avatar="https://github.com/shadowcodesyt.png"
-                title1="OS"
-                title2="Tools"
-                github="https://www.kali.org/"
-                twitter="https://twitter.com/shadowcodesyt"
-              ></TeamMember>
-
-              <TeamMember
-                name="SSL Certificate Labs"
-                avatar="https://github.com/whirl21.png"
-                title1="Tools"
-                title2="Service"
-                github="https://zerossl.com/"
-                twitter="https://twitter.com/whirl_21"
-              ></TeamMember>
-
-              <TeamMember
-                name="Browser101"
-                avatar="https://github.com/whirl21.png"
-                title1="Tools"
-                title2="Extension"
-                github="https://www.youtube.com/playlist?list=PLTA92rkznIIM1RRqwz27X5xQhcB-BwqJl"
-                twitter="https://twit"
-              ></TeamMember>
-            </div>
-          </div>
-        )}
+        {isLocked && <Resource />}
 
         {!isLocked && (
           <>
-            <div className="bg-base-200">
-              <div className="hero">
-                <div className="text-center hero-content">
-                  <div className="max-w-md">
-                    <AnimationOnScroll
-                      animateOnce={true}
-                      animateIn="zoomInDown"
-                    >
-                      <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
-                        Resources++📕
-                      </h1>
-                    </AnimationOnScroll>
-                    <AnimationOnScroll
-                      animateOnce={true}
-                      animateIn="slideInDown"
-                      delay={700}
-                    >
-                      <p className="py-6 mb-5 text-sm md:text-base">
-                        A collection of handcrafted and Open Source resources to
-                        get your journey started
-                      </p>
-                    </AnimationOnScroll>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center w-full lg:flex-row">
-                <TeamMember
-                  name="Linux Foundation"
-                  avatar="https://github.com/whirlxd.png"
-                  title1="Learning "
-                  title2="Projects"
-                  github="https://training.linuxfoundation.org/"
-                  twitter="https://training.linuxfoundation.org/"
-                ></TeamMember>
-
-                <TeamMember
-                  name="TODO Group"
-                  avatar="https://github.com/whirl21.png"
-                  title1="Projects"
-                  title2="Learning"
-                  github="https://www.channelfutures.com/connectivity/todo-group-new-linux-foundation-project-spurs-open-source-adoption"
-                  twitter="https://www.linkedin.com/company/todosecurity/"
-                ></TeamMember>
-
-                <TeamMember
-                  name="HackTheBox"
-                  avatar="https://github.com/whirl21.png"
-                  title1="CTF"
-                  title2="Learning"
-                  github="https://www.hackthebox.com/"
-                  twitter="https://twitter.com/whirl_21"
-                ></TeamMember>
-              </div>
-
-              <div className="flex flex-col justify-center w-full lg:flex-row">
-                <TeamMember
-                  name="SEQUEL"
-                  avatar="https://github.com/shadowcodesyt.png"
-                  title1="Language"
-                  title2="Database"
-                  github="https://sequelpro.com/docs"
-                  twitter="https://twitter.com/shadowcodesyt"
-                ></TeamMember>
-
-                <TeamMember
-                  name="MDN Docs"
-                  avatar="https://github.com/whirl21.png"
-                  title1="Documentation"
-                  title2="Best Practices"
-                  github="https://developer.mozilla.org/en-US/"
-                  twitter="https://twitter.com/whirl_21"
-                ></TeamMember>
-
-                <TeamMember
-                  name="W3School"
-                  avatar="https://github.com/whirl21.png"
-                  title1="Documentation"
-                  title2="Learning"
-                  github="https://www.w3schools.com/"
-                  twitter="https://twitter.com/whirl_21"
-                ></TeamMember>
-              </div>
-
-              <div className="flex flex-col justify-center w-full lg:flex-row">
-                <TeamMember
-                  name="Kali Linux"
-                  avatar="https://github.com/shadowcodesyt.png"
-                  title1="OS"
-                  title2="Tools"
-                  github="https://www.kali.org/"
-                  twitter="https://twitter.com/shadowcodesyt"
-                ></TeamMember>
-
-                <TeamMember
-                  name="SSL Certificate Labs"
-                  avatar="https://github.com/whirl21.png"
-                  title1="Tools"
-                  title2="Service"
-                  github="https://zerossl.com/"
-                  twitter="https://twitter.com/whirl_21"
-                ></TeamMember>
-
-                <TeamMember
-                  name="Browser101"
-                  avatar="https://github.com/whirl21.png"
-                  title1="Tools"
-                  title2="Extension"
-                  github="https://www.youtube.com/playlist?list=PLTA92rkznIIM1RRqwz27X5xQhcB-BwqJl"
-                  twitter="https://twit"
-                ></TeamMember>
-              </div>
-            </div>
+            <Resource />
             <Footer />
           </>
         )}
@@ -331,7 +127,7 @@ This version should effectively communicate the risks while remaining engaging a
             onClick={unlockSection}
             className="px-4 py-2 text-white bg-blue-500 rounded"
           >
-            Unlock Resources 🔑
+            Unlock Access 🔓
           </button>
           <dialog id="my_modal_2" className="modal">
             <div className="modal-box">
@@ -402,10 +198,15 @@ This version should effectively communicate the risks while remaining engaging a
 }
 function TeamMember(props) {
   return (
-    <div class="group flex max-w-sm flex-col items-center rounded-lg bg-[#9713fb] p-4 shadow-lg md:flex-row  my-5 hover:-translate-y-2 transition mx-4 md:mx-auto ">
+    <a
+      href={props.github}
+      target="_blank"
+      aria-label={props.name}
+      class="group flex max-w-sm flex-col items-center rounded-lg bg-[#9713fb] cursor-grab p-4 shadow-lg md:flex-row  my-5 hover:-translate-y-2 transition mx-4 md:mx-auto "
+    >
       <img
         class="mx-auto mb-4 h-24 w-24 rounded-lg md:mx-0 md:mb-0 md:mr-4"
-        src="https://via.placeholder.com/150"
+        src={props.avatar}
         alt="Profile Image"
       />
 
@@ -418,12 +219,125 @@ function TeamMember(props) {
           {props.title1} & {props.title2}
         </p>
 
-        <p class="mt-1 text-slate-300">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime.
-        </p>
+        <p class="mt-1 text-slate-300">{props.desc}</p>
+      </div>
+    </a>
+  );
+}
+
+function Resource() {
+  return (
+    <div>
+      <div className="bg-base-200">
+        <div className="hero">
+          <div className="text-center hero-content">
+            <div className="max-w-md">
+              <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
+                <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
+                  Resources++📕
+                </h1>
+              </AnimationOnScroll>
+              <AnimationOnScroll
+                animateOnce={true}
+                animateIn="slideInDown"
+                delay={50}
+              >
+                <p className="py-6 mb-5">
+                  A collection of handcrafted and open source resources to get
+                  your journey started
+                </p>
+              </AnimationOnScroll>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center w-full lg:flex-row">
+          <TeamMember
+            name="Exclusive Quiz"
+            avatar="https://d1ymz67w5raq8g.cloudfront.net/Pictures/480xany/6/5/5/509655_shutterstock_1506580442_769367.jpg"
+            title1="Testing "
+            title2="Quiz"
+            github="/quiz"
+            desc="Test your abilities with this exclusive quiz with a certificate of completion"
+          ></TeamMember>
+
+          <TeamMember
+            name="Net Craft"
+            avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCWP-IL9zURSLbtNBLLnq_Sz6Y9WQkcQxorQ&s"
+            title1="Safety"
+            title2="Extensions"
+            github="https://www.netcraft.com/"
+            desc="A Super handy browser extension to check the safety of the websites you visit"
+          ></TeamMember>
+
+          <TeamMember
+            name="Zero SSL"
+            avatar="https://pbs.twimg.com/profile_images/1256353356446076929/k7PBvuSe_400x400.jpg"
+            title1="Security"
+            title2="Tools"
+            github="https://zerossl.com/"
+            desc="A  tool which helps you generate SSL certificate for your website"
+          ></TeamMember>
+        </div>
+
+        <div className="flex flex-col justify-center w-full lg:flex-row">
+          <TeamMember
+            name="Have I Been Pwned"
+            avatar="https://haveibeenpwned.com/Content/Images/SocialLogo.png"
+            title1="Security"
+            title2="Tools"
+            github="https://haveibeenpwned.com/"
+            desc="The website to check if your data has been compromised in a breach"
+          ></TeamMember>
+
+          <TeamMember
+            name="Virus Total"
+            avatar="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6c51b7ce-37c6-46e8-8a60-f77282a66f9c/dfq0c21-66386d21-3b27-47e7-808d-c9c03248549b.png/v1/fill/w_225,h_225,q_80,strp/virustotal_icon_by_effuuuuuuuu_dfq0c21-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjI1IiwicGF0aCI6IlwvZlwvNmM1MWI3Y2UtMzdjNi00NmU4LThhNjAtZjc3MjgyYTY2ZjljXC9kZnEwYzIxLTY2Mzg2ZDIxLTNiMjctNDdlNy04MDhkLWM5YzAzMjQ4NTQ5Yi5wbmciLCJ3aWR0aCI6Ijw9MjI1In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.M4bCVAvV4BtY_-lVY9FMGwutv9KCXucRGkwOthvhBMc"
+            title1="Safety"
+            title2="Best Practices"
+            github="https://developer.mozilla.org/en-US/"
+            desc="A website to check the contents of a file for malware before downloading"
+          ></TeamMember>
+
+          <TeamMember
+            name="Sherlock"
+            avatar="https://www.kali.org/tools/sherlock/images/sherlock-logo.svg"
+            title1="Research"
+            title2="Tools"
+            github="https://www.w3schools.com/"
+            desc="A tool to find social media accounts by username across the internet"
+          ></TeamMember>
+        </div>
+
+        <div className="flex flex-col justify-center w-full lg:flex-row">
+          <TeamMember
+            name="Kali Linux"
+            avatar="https://img-c.udemycdn.com/course/750x422/4142968_8c8d_3.jpg"
+            title1="OS"
+            title2="Tools"
+            github="https://www.kali.org/"
+            desc="A Linux distribution designed for hacking and penetration testing"
+          ></TeamMember>
+
+          <TeamMember
+            name="ADGuard DNS"
+            avatar="https://w7.pngwing.com/pngs/889/893/png-transparent-adguard-thumbnail.png"
+            title1="Adblock"
+            title2="DNS"
+            github="https://zerossl.com/"
+            desc="A free DNS service that blocks ads, trackers, and malware"
+          ></TeamMember>
+
+          <TeamMember
+            name="MDN Web Docs"
+            avatar="https://static.vecteezy.com/system/resources/previews/009/122/447/non_2x/mdn-logo-mdn-letter-mdn-letter-logo-design-initials-mdn-logo-linked-with-circle-and-uppercase-monogram-logo-mdn-typography-for-technology-business-and-real-estate-brand-vector.jpg"
+            title1="Documentation"
+            title2="Learning"
+            github="https://www.youtube.com/playlist?list=PLTA92rkznIIM1RRqwz27X5xQhcB-BwqJl"
+            desc="The best place to learn web development and how to secure your websites "
+          ></TeamMember>
+        </div>
       </div>
     </div>
   );
 }
-
 export default Team;

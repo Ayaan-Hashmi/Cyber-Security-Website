@@ -90,7 +90,7 @@ function Features() {
 export default Features;
 function FeatureCardd(props) {
   return (
-    <div class="  mx-auto flex w-80 md:w-96 flex-col rounded-2xl bg-purple-200 shadow-xl h-auto hover:bg-purple-300 transition duration-150 hover:scale-90 hover:opacity-75">
+    <div class="  mx-auto flex w-80 md:w-96 flex-col rounded-2xl bg-slate-200 shadow-xl h-auto hover:bg-purple-300 transition duration-150 hover:scale-90 hover:opacity-75">
       <figure class="flex items-center justify-center rounded-2xl">
         <img
           src={props.previewImage}

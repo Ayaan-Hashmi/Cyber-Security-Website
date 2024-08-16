@@ -56,12 +56,18 @@ const UniqueHeroSection = () => {
           </p>
 
           <div class="flex justify-center md:justify-start space-x-4">
-            <button class="py-3 px-6 bg-gray-800 hover:bg-gray-700 rounded">
-              Learn More
-            </button>
-            <button class="py-3 px-6 bg-gray-700 hover:bg-gray-600 rounded">
-              Take the Quiz
-            </button>
+            <a
+              href="#vulnerabilities"
+              class="py-3 px-6 bg-gray-800 hover:bg-gray-700 rounded"
+            >
+              Get Started
+            </a>
+            <a
+              href="#encryption"
+              class="py-3 px-6 bg-gray-700 hover:bg-gray-600 rounded"
+            >
+              Try Encryption
+            </a>
           </div>
         </div>
 
