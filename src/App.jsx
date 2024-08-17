@@ -23,6 +23,7 @@ const Core = () => {
       </section>
       <section className="" id="vulnerabilities">
         <Component.Features />
+        <Component.safetyTips />
       </section>
       <section className="" id="https">
         <Component.Faq />

@@ -62,20 +62,16 @@ const Quiz = () => {
       <div className="hero">
         <div className="text-center hero-content">
           <div className="max-w-md">
-            <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
+            <div animateOnce={true} animateIn="zoomInDown">
               <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                 Quiz 🙋‍♂️
               </h1>
-            </AnimationOnScroll>
-            <AnimationOnScroll
-              animateOnce={true}
-              animateIn="slideInDown"
-              delay={700}
-            >
+            </div>
+            <div animateOnce={true} animateIn="slideInDown" delay={700}>
               <p className="py-6 ">
                 take the quiz to find out how much you have learnt till now
               </p>
-            </AnimationOnScroll>
+            </div>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import Quiz from "./Quiz";
 const MySwal = withReactContent(Swal);
 
 function Team() {
@@ -117,6 +118,9 @@ function Team() {
         {!isLocked && (
           <>
             <Resource />
+            <section id="quiz">
+              <Quiz />
+            </section>
             <Footer />
           </>
         )}
@@ -197,10 +201,17 @@ function Team() {
   );
 }
 function TeamMember(props) {
+  const [target, setTarget] = useState("_blank");
+
+  useEffect(() => {
+    if (props.github === "/#quiz") {
+      setTarget("_self");
+    }
+  }, [props.github]);
   return (
     <a
       href={props.github}
-      target="_blank"
+      target={target}
       aria-label={props.name}
       class="group flex max-w-sm flex-col items-center rounded-lg bg-[#9713fb] cursor-grab p-4 shadow-lg md:flex-row  my-5 hover:-translate-y-2 transition mx-4 md:mx-auto "
     >
@@ -232,21 +243,17 @@ function Resource() {
         <div className="hero">
           <div className="text-center hero-content">
             <div className="max-w-md">
-              <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
+              <div animateOnce={true} animateIn="zoomInDown">
                 <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                   Resources++📕
                 </h1>
-              </AnimationOnScroll>
-              <AnimationOnScroll
-                animateOnce={true}
-                animateIn="slideInDown"
-                delay={50}
-              >
+              </div>
+              <div animateOnce={true} animateIn="slideInDown" delay={50}>
                 <p className="py-6 mb-5">
                   A collection of handcrafted and open source resources to get
                   your journey started
                 </p>
-              </AnimationOnScroll>
+              </div>
             </div>
           </div>
         </div>
@@ -256,7 +263,7 @@ function Resource() {
             avatar="https://d1ymz67w5raq8g.cloudfront.net/Pictures/480xany/6/5/5/509655_shutterstock_1506580442_769367.jpg"
             title1="Testing "
             title2="Quiz"
-            github="/quiz"
+            github="/#quiz"
             desc="Test your abilities with this exclusive quiz with a certificate of completion"
           ></TeamMember>
 

@@ -84,7 +84,7 @@ export default UniqueHeroSection;
 //  <section className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
 //       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-transparent"></div>
 //       <div className="relative z-10 text-center">
-//         <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
+//         <div animateOnce={true} animateIn="zoomInDown">
 //           <motion.h1
 //             initial={{ opacity: 0 }}
 //             animate={{ opacity: 1 }}
@@ -96,21 +96,21 @@ export default UniqueHeroSection;
 //           >
 //             Cyber Security 101
 //           </motion.h1>
-//         </AnimationOnScroll>
+//         </div>
 
 //         <br></br>
 //         <RotatingText
 //           words={["HTTPS", "XSS", "SQL Injection", "CSRF", "DDoS", "Malware"]}
 //         />
 //         <br></br>
-//         <AnimationOnScroll animateOnce="true" animateIn="slideInUp" delay={700}>
+//         <div animateOnce="true" animateIn="slideInUp" delay={700}>
 //           <p className="text-xl text-white text-balance">
 //             Dive into the fundamentals of web cyber security with our
 //             easy-to-follow guide. Learn how to safeguard your online presence
 //             and prevent cyber threats.
 //           </p>
-//         </AnimationOnScroll>
-//         <AnimationOnScroll animateOnce="true" animateIn="slideInUp" delay={800}>
+//         </div>
+//         <div animateOnce="true" animateIn="slideInUp" delay={800}>
 //           <div className="mt-8">
 //             <a
 //               href="#features"
@@ -119,7 +119,7 @@ export default UniqueHeroSection;
 //               <p className="ml-8 bold">Get Started</p>
 //             </a>
 //           </div>
-//         </AnimationOnScroll>
+//         </div>
 
 //       </div>
 //     </section>

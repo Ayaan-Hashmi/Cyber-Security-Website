@@ -13,7 +13,7 @@ const RotatingWords = ({ words }) => {
 
   return (
     <div className="flex flex-wrap justify-center space-x-4">
-      <AnimationOnScroll animateIn="fadeIn" animateOnce={true} delay={900}>
+      <div animateIn="fadeIn" animateOnce={true} delay={900}>
         {words.map((word, index) => (
           <span
             key={index}
@@ -24,7 +24,7 @@ const RotatingWords = ({ words }) => {
             {word}
           </span>
         ))}
-      </AnimationOnScroll>
+      </div>
     </div>
   );
 };

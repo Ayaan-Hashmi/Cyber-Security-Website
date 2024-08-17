@@ -7,88 +7,84 @@ function Faq() {
       <div className="hero">
         <div className="text-center hero-content">
           <div className="max-w-md">
-            <AnimationOnScroll animateOnce={true} animateIn="zoomInDown">
+            <div animateOnce={true} animateIn="zoomInDown">
               <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                 HTTP(S) 🔒
               </h1>
-            </AnimationOnScroll>
-            <AnimationOnScroll
-              animateOnce={true}
-              animateIn="slideInDown"
-              delay={700}
-            >
+            </div>
+            <div animateOnce={true} animateIn="slideInDown" delay={700}>
               <p className="py-6 mb-5">
                 what is the main difference between these 2 and why is it
                 important
               </p>
-            </AnimationOnScroll>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="flex flex-col items-start justify-center w-full sm:flex-row md:flex-row lg:flex-row md:items-center lg:items-center">
-        <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInLeft">
+        <div animateOnce={true} animateIn="lightSpeedInLeft">
           <FaqCard
             question="What is HTTP"
             answer="HTTP (Hypertext Transfer Protocol) is ..."
             longdesc="HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to various commands. It operates at the application layer and uses a request-response model where a client sends a request to a server, and the server sends back the requested information.
 "
           />
-        </AnimationOnScroll>
+        </div>
 
         {/* Hide the divider on small screens and adjust styling for larger screens */}
         <div className="items-center justify-center hidden h-screen mx-auto sm:flex md:flex lg:flex divider lg:divider-horizontal"></div>
 
-        <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInRight">
+        <div animateOnce={true} animateIn="lightSpeedInRight">
           <FaqCard
             question="What is HTTPS?"
             answer="HTTPS (Hypertext Transfer Protocol Secu..."
             longdesc="HTTPS (Hypertext Transfer Protocol Secure) is an extension of HTTP designed to secure data communication over a computer network. It uses SSL/TLS protocols to encrypt the data exchanged between the client and server. This encryption ensures that sensitive information such as login credentials, credit card details, and personal data are protected from eavesdroppers and attackers during transmission."
           />
-        </AnimationOnScroll>
+        </div>
       </div>
 
       <div className="flex flex-col items-start justify-center w-full sm:flex-row md:flex-row lg:flex-row md:items-center lg:items-center">
-        <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInLeft">
+        <div animateOnce={true} animateIn="lightSpeedInLeft">
           <FaqCard
             question="How does HTTPS improve security?"
             answer="HTTPS improves security by encrypting ..."
             longdesc="HTTPS improves security by encrypting data sent between a user's browser and the website server, making it difficult for third parties to intercept or tamper with the data. This encryption is achieved through SSL/TLS protocols, which provide confidentiality, integrity, and authentication. Confidentiality ensures that only the intended recipient can read the data. Integrity ensures that the data has not been altered. Authentication verifies the identity of the website, ensuring users are communicating with the intended site."
           />
-        </AnimationOnScroll>
+        </div>
 
         <div className="items-center justify-center hidden h-screen mx-auto sm:flex md:flex lg:flex divider lg:divider-horizontal"></div>
-        <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInRight">
+        <div animateOnce={true} animateIn="lightSpeedInRight">
           <FaqCard
             question="Why is HTTPS important for websites?"
             answer="HTTPS is crucial for several reasons I... "
             longdesc="HTTPS is crucial for several reasons. It protects user data from being intercepted by hackers, thereby ensuring privacy and security. It also builds trust with users, as they can see their data is secure. Furthermore, modern web browsers mark non-HTTPS sites as *Not Secure,* which can deter users. HTTPS is also a factor in search engine rankings, with search engines like Google favoring secure sites. Lastly, it is required for accessing new browser features and APIs."
           />
-        </AnimationOnScroll>
+        </div>
       </div>
 
       <div className="flex flex-col items-start justify-center w-full sm:flex-row md:flex-row lg:flex-row md:items-center lg:items-center ">
-        <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInLeft">
+        <div animateOnce={true} animateIn="lightSpeedInLeft">
           <FaqCard
             question="How can you tell if a website uses HTTPS?"
             answer="To determine if a website uses HTTPS l..."
             className=""
             longdesc="To determine if a website uses HTTPS, look at the URL in the browser's address bar. If the URL starts with *https://* instead of *http://*, the site is using HTTPS. Additionally, most browsers display a padlock icon next to the URL, indicating a secure connection. Some browsers may also show warnings if a site is not secure, highlighting the importance of using HTTPS."
           />
-        </AnimationOnScroll>
+        </div>
 
         <div className="items-center justify-center hidden h-screen mx-auto sm:flex md:flex lg:flex divider lg:divider-horizontal"></div>
-        <AnimationOnScroll animateOnce={true} animateIn="lightSpeedInRight">
+        <div animateOnce={true} animateIn="lightSpeedInRight">
           <FaqCard
             question="How much do HTTPS certificates cost?"
             answer="The cost of HTTPS certificates can vary..."
             className="flex flex-col justify-center mx-auto"
             longdesc="The cost of HTTPS certificates can vary widely. Some certificate authorities (CAs) offer free certificates, like Let's Encrypt, which provide basic SSL/TLS encryption. Other CAs offer paid certificates that can range from $10 to several hundred dollars per year, depending on the level of validation (Domain Validation, Organization Validation, Extended Validation) and additional features like warranty, customer support, and site seals."
           />
-        </AnimationOnScroll>
+        </div>
       </div>
 
-      <AnimationOnScroll animateOnce={true} animateIn="zoomInUp" offset={50}>
+      <div animateOnce={true} animateIn="zoomInUp" offset={50}>
         <a
           href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
           target="_blank"
@@ -96,7 +92,7 @@ function Faq() {
         >
           [ Learn More ]
         </a>
-      </AnimationOnScroll>
+      </div>
     </div>
   );
 }
