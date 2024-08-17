@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This is a beginner's guide to Cyber Security. It is intended for those who are new to the field and want to learn more about it. This guide will cover the basics of Cyber Security, including what it is, why it is important, and how you can get started in the field.
+This is a beginner's guide to Cyber Security as a both a developer and a user. This project is part of the the website development even held in the Crypticon event by MAPS , Ashok Vihar. The writeup for this is available [here](writeup.md).
 
 ### Tech Stack
 
@@ -40,7 +40,7 @@ npm run dev
 
 #### License
 
-GPL-3.0 License
+[GPL-3.0 License](LICENSE)
 
 <br></br>
 <b>Made by Team Mayoor </b>

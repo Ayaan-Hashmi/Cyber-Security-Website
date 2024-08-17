@@ -4,6 +4,7 @@ import * as Component from "./Components";
 import "animate.css/animate.compat.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import * as Pages from "./pages";
+// TODO: Add links correctly , finish writup of all pages , optimize imges and dependancies , also add lazy loading
 
 const Loader = () => {
   return (
@@ -15,8 +16,6 @@ const Loader = () => {
 const Core = () => {
   return (
     <>
-      {/* @error - with faq and best practices and resources causing x overflow */}
-
       <Component.Header />
       <section id="main">
         <Component.UniqueHeroSection />

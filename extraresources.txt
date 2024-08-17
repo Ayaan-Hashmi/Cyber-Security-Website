@@ -1,11 +1,11 @@
-
-        Whoa, whirlxd!
+A Sample of the extra resources doc the user is forced to download
+        Whoa, [name]!
 
         You just shared some personal info for access to exclusive content:
 
-        • Your Name: whirlxd
-        • Your Phone Number: 9717291341
-        • Your IP Address: 182.69.179.208 [which i was able to get when you visited this site and submitted the form]
+        • Your Name: [name]
+        • Your Phone Number: [phone]
+        • Your IP Address: [ip address] [which i was able to get when you visited this site and submitted the form]
 
         Did you realize you gave all that away just by filling out a form? 
         Don't worry, I'm not storing any of it. But others might be! 
