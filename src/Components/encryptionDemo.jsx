@@ -91,7 +91,7 @@ function encryptionDemo() {
 
   return (
     <div>
-      <div className="min-h-screen p-8 bg-base-100">
+      <div className="min-h-screen p-8 bg-base-200">
         <h1 className="text-3xl font-bold text-center md:text-4xl lg:text-5xl">
           Encryption 🗝️
         </h1>

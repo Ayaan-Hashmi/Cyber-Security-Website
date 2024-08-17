@@ -3,7 +3,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 
 function Faq() {
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-base-100">
       <div className="hero">
         <div className="text-center hero-content">
           <div className="max-w-md">

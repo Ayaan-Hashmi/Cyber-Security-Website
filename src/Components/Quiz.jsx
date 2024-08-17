@@ -58,7 +58,7 @@ const Quiz = () => {
     downloadjs(dataURL, "certificate.png", "image/png");
   };
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-base-300">
       <div className="hero">
         <div className="text-center hero-content">
           <div className="max-w-md">
