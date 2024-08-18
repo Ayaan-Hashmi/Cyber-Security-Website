@@ -1,9 +1,13 @@
 // src/components/UniqueHeroSection.jsx
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import RotatingText from "./RotatingWord";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import Globe from "./globe";
+import cash from "../assets/cash.png";
+import cashbag from "../assets/cashbag.png";
+import cashstack from "../assets/cashstack.png";
+const AssetLoader = lazy(() => import("./assetLoader.jsx"));
+import Globe from "./globe"; // importing globe with lazy loading
 const UniqueHeroSection = () => {
   const [isTyping, setIsTyping] = useState(true);
   const toggleTyping = () => setIsTyping(!isTyping);
@@ -15,22 +19,14 @@ const UniqueHeroSection = () => {
           <div class="flex items-center justify-center md:justify-start space-x-2 mb-4">
             <div class="flex -space-x-2">
               <img
-                class="w-10 h-10 rounded-full border-2 border-white"
-                src="https://via.placeholder.com/40"
+                class="w-10 h-10 rounded-full "
+                src={cashbag}
                 alt="Profile 1"
               />
-              <img
-                class="w-10 h-10 rounded-full border-2 border-white"
-                src="https://via.placeholder.com/40"
-                alt="Profile 2"
-              />
-              <img
-                class="w-10 h-10 rounded-full border-2 border-white"
-                src="https://via.placeholder.com/40"
-                alt="Profile 3"
-              />
+              <img class="w-10 h-10 rounded-full " src={cash} alt="Profile 2" />
+              <img class="w-10 h-10 rounded-full " src={cash} alt="Profile 3" />
             </div>
-            <p class="text-sm">10m+ $ stolen</p>
+            <p class="text-md md:text-lg">10M+ $ stolen</p>
           </div>
 
           <h1 class="text-4xl md:text-6xl font-extrabold mb-2">
@@ -72,7 +68,9 @@ const UniqueHeroSection = () => {
         </div>
 
         <div className="justify-center hidden w-full mt-8 md:w-1/2 md:mt-0 lg:flex lg:justify-end">
-          <Globe className="" />
+          <Suspense fallback={<AssetLoader />}>
+            <Globe />
+          </Suspense>
         </div>
       </div>
     </div>
@@ -80,46 +78,3 @@ const UniqueHeroSection = () => {
 };
 
 export default UniqueHeroSection;
-
-//  <section className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
-//       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-transparent"></div>
-//       <div className="relative z-10 text-center">
-//         <div animateOnce={true} animateIn="zoomInDown">
-//           <motion.h1
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             exit={{ opacity: 0 }}
-//             transition={{ duration: 1 }}
-//             className={`text-5xl font-bold text-white ${
-//               isTyping ? "typewriter" : ""
-//             }`}
-//           >
-//             Cyber Security 101
-//           </motion.h1>
-//         </div>
-
-//         <br></br>
-//         <RotatingText
-//           words={["HTTPS", "XSS", "SQL Injection", "CSRF", "DDoS", "Malware"]}
-//         />
-//         <br></br>
-//         <div animateOnce="true" animateIn="slideInUp" delay={700}>
-//           <p className="text-xl text-white text-balance">
-//             Dive into the fundamentals of web cyber security with our
-//             easy-to-follow guide. Learn how to safeguard your online presence
-//             and prevent cyber threats.
-//           </p>
-//         </div>
-//         <div animateOnce="true" animateIn="slideInUp" delay={800}>
-//           <div className="mt-8">
-//             <a
-//               href="#features"
-//               className="inline-flex items-center w-48 h-12 px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 border border-transparent rounded-md text-pretty hover:bg-indigo-800 "
-//             >
-//               <p className="ml-8 bold">Get Started</p>
-//             </a>
-//           </div>
-//         </div>
-
-//       </div>
-//     </section>

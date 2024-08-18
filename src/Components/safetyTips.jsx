@@ -47,7 +47,7 @@ function StaySafeOnline() {
             </g>
           </svg>
           <h3 className="mb-2 text-xl font-bold">Use a VPN</h3>
-          <p>
+          <p className="font-semibold">
             A Virtual Private Network (VPN) encrypts your internet connection,
             making it more secure and protecting your privacy.
           </p>
@@ -84,7 +84,7 @@ function StaySafeOnline() {
             </g>
           </svg>
           <h3 className="mb-2 text-xl font-bold">Don't Share OTPs</h3>
-          <p>
+          <p className="font-semibold">
             One-Time Passwords (OTPs) are meant to be kept private. Never share
             them with anyone, even if they claim to be from a trusted source.
           </p>
@@ -121,7 +121,7 @@ function StaySafeOnline() {
             </g>
           </svg>
           <h3 className="mb-2 text-xl font-bold">Use Strong Passwords</h3>
-          <p>
+          <p className="font-semibold">
             Create strong, unique passwords for each of your accounts. Use a
             combination of letters, numbers, and special characters.
           </p>
@@ -158,7 +158,7 @@ function StaySafeOnline() {
             </g>
           </svg>
           <h3 className="mb-2 text-xl font-bold">Beware of Phishing</h3>
-          <p>
+          <p className="font-semibold">
             Be cautious of emails or messages that ask for personal information.
             Verify the sender's identity before clicking on any links.
           </p>

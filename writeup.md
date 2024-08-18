@@ -27,9 +27,9 @@ Now, let's talk about some of my fav features that i made
 
 - **Interactive Quiz**: Originally we wanted to make a quiz that would be a section before the exclusive content access but ayaan thought it would be better as it was locked behind the information reveal thing.
 
-- **Responsive Design**: As previously mentioned we madde sure to use a different design for all sections of the website and making each layout responsive was the hardest part prolly but we did it and we are proud of it.
+- **Responsive Design**: As previously mentioned we made sure to use a different design for all sections of the website and making each layout responsive was the hardest part prolly but we did it and we are proud of it.
 
-- **Improving Metrics**: Something really common in peoples belief is that react is slow. But we made sure to optimize the website to the best of our abilities and we are proud to say that the website is super fast and responsive.
+- **Improving Metrics**: Something really common in peoples belief is that react is slow. But we made sure to optimize the website to the best of our abilities.After doing intensive research we came to the conclusion that it will take 17 seconds to load all the images without using lazy load , so we added a cool starting animation.
 
 ## Final Thoughts
 

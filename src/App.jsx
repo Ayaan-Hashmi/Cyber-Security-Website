@@ -9,7 +9,7 @@ import * as Pages from "./pages";
 const Loader = () => {
   return (
     <>
-      <Component.HackerLoadingScreen />
+      <Component.assetLoader />
     </>
   );
 };
@@ -46,7 +46,7 @@ function App() {
   React.useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 1); // 27k
+    }, 2000); // 27k
   }, []);
   console.log(Pages.cybersecurity);
   return (

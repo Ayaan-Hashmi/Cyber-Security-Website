@@ -10,3 +10,4 @@ export { default as Info } from "./InfoPage";
 export { default as Quiz } from "./Quiz";
 export { default as EncryptionDemo } from "./encryptionDemo";
 export { default as safetyTips } from "./safetyTips";
+export { default as assetLoader } from "./assetLoader";
