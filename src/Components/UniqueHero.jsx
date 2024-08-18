@@ -18,20 +18,37 @@ const UniqueHeroSection = () => {
         <div class="text-center md:text-left max-w-lg">
           <div class="flex items-center justify-center md:justify-start space-x-2 mb-4">
             <div class="flex -space-x-2">
-              <img
-                class="w-10 h-10 rounded-full "
-                src={cashbag}
-                alt="Profile 1"
-              />
-              <img class="w-10 h-10 rounded-full " src={cash} alt="Profile 2" />
-              <img class="w-10 h-10 rounded-full " src={cash} alt="Profile 3" />
+              <AnimationOnScroll animateIn="fadeInLeft">
+                <img
+                  class="w-10 h-10 rounded-full "
+                  src={cashbag}
+                  alt="Profile 1"
+                />
+              </AnimationOnScroll>
+              <AnimationOnScroll animateIn="fadeInLeft">
+                <img
+                  class="w-10 h-10 rounded-full "
+                  src={cash}
+                  alt="Profile 2"
+                />
+              </AnimationOnScroll>
+              <AnimationOnScroll animateIn="fadeInLeft">
+                <img
+                  class="w-10 h-10 rounded-full "
+                  src={cash}
+                  alt="Profile 3"
+                />
+              </AnimationOnScroll>
             </div>
-            <p class="text-md md:text-lg">10M+ $ stolen</p>
+            <AnimationOnScroll animateIn="fadeInLeft">
+              <p class="text-md md:text-lg">10M+ $ stolen</p>
+            </AnimationOnScroll>
           </div>
-
-          <h1 class="text-4xl md:text-6xl font-extrabold mb-2">
-            As the Globe turns, Hackers earn
-          </h1>
+          <AnimationOnScroll animateIn="fadeInUp" animateOnce={true}>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-2">
+              As the Globe turns, Hackers earn
+            </h1>
+          </AnimationOnScroll>
           <RotatingText
             className=""
             words={[
@@ -44,12 +61,14 @@ const UniqueHeroSection = () => {
               "Ransomware",
             ]}
           />
-          <p class="text-lg md:text-xl mb-8 mt-2  font-medium">
-            In the time it took for you to land here, countless cyber threats
-            have circled the globe. Every second, vulnerabilities put websites
-            at risk. Learn how to fortify your defenses and ensure your digital
-            presence remains unshakable.
-          </p>
+          <AnimationOnScroll animateIn="fadeInLeft" animateOnce={true}>
+            <p class="text-lg md:text-xl mb-8 mt-2  font-medium">
+              In the time it took for you to land here, countless cyber threats
+              have circled the globe. Every second, vulnerabilities put websites
+              at risk. Learn how to fortify your defenses and ensure your
+              digital presence remains unshakable.
+            </p>
+          </AnimationOnScroll>
 
           <div class="flex justify-center md:justify-start space-x-4">
             <a
@@ -59,10 +78,10 @@ const UniqueHeroSection = () => {
               Get Started
             </a>
             <a
-              href="#encryption"
+              href="/cybersecurity"
               class="py-3 px-6 bg-gray-700 hover:bg-gray-600 rounded"
             >
-              Try Encryption
+              Learn More
             </a>
           </div>
         </div>

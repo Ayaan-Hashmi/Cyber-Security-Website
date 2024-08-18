@@ -13,14 +13,10 @@ function Features() {
       <div className="hero bg-base-100 ">
         <div className="text-center hero-content">
           <div className="max-w-md">
-            <div animateOnce={true} animateIn="zoomInDown">
-              <h1 className="mt-10 mb-10 text-5xl font-bold ">
-                [ Vulnerbilities ]
-              </h1>
-            </div>
-            <div animateOnce={true} animateIn="slideInDown" delay={700}>
+            <AnimationOnScroll animateOnce={true} animateIn="fadeInUp">
+              <h1 className="mt-5 text-5xl font-bold ">[ Vulnerabilities ]</h1>
               <p className="py-6 mb-5 ">The way hackers exploit your website</p>
-            </div>
+            </AnimationOnScroll>
           </div>
         </div>
       </div>
@@ -33,6 +29,7 @@ function Features() {
 "
             longdesc="Cross-site scripting (XSS) is a type of security vulnerability typically found in web applications. XSS attacks enable attackers to inject client-side scripts into web pages viewed by other users. A cross-site scripting vulnerability may be used by attackers to bypass access controls such as the same-origin policy. "
             previewImage={xss}
+            link="/xss-attacks"
           />
         </div>
 
@@ -44,6 +41,7 @@ function Features() {
             desc="Compromise databases via unauthorized queries, enabling data manipulation or exposure."
             longdesc="SQL Injection (SQLi) is a type of security vulnerability typically found in web applications that interact with databases. SQLi attacks enable attackers to execute arbitrary SQL queries within the database used by the application. An SQL injection vulnerability may be used by attackers to bypass authentication, extract sensitive data, modify or delete records, and perform administrative operations on the database."
             previewImage={sql}
+            link="/sql-injection"
           />
         </div>
         <div className="mx-auto divider lg:divider-horizontal"></div>
@@ -54,6 +52,7 @@ function Features() {
             desc="Allow attackers to read local files without relying on environment variables, posing a significant security risk.
 "
             previewImage={env}
+            link="/file-inclusion-attacks"
           />
         </div>
       </div>
@@ -68,6 +67,7 @@ function Features() {
             desc="Manipulate server-side includes, potentially leading to unauthorized content insertion.
 "
             previewImage={ssi}
+            link="/ssi-injection"
           />
         </div>
         <div className="mx-auto divider lg:divider-horizontal"></div>
@@ -78,6 +78,7 @@ function Features() {
             desc="Enables execution of arbitrary commands on a remote host, granting full control of the webserver.
 "
             previewImage={rce}
+            link="/remote-code-execution"
           />
         </div>
         <br></br>
@@ -90,25 +91,33 @@ function Features() {
 export default Features;
 function FeatureCardd(props) {
   return (
-    <div class="  mx-auto flex w-80 md:w-96 flex-col rounded-2xl bg-slate-200 shadow-xl h-auto hover:bg-purple-300 transition duration-150 hover:scale-90 hover:opacity-75">
-      <figure class="flex items-center justify-center rounded-2xl">
-        <img
-          src={props.previewImage}
-          alt="Card Preview"
-          class="rounded-t-xl h-52"
-        />
-      </figure>
-      <div class="flex flex-col p-8">
-        <div class="pb-6 text-2xl font-bold uppercase text-[#374151]">
-          {props.title}
+    <>
+      <AnimationOnScroll animateIn="zoomIn" animateOnce={true}>
+        <div class="  mx-auto flex w-80 md:w-96 flex-col rounded-2xl bg-slate-200 shadow-xl h-auto hover:bg-slate-300 transition duration-150 hover:scale-90 hover:opacity-75">
+          <figure class="flex items-center justify-center rounded-2xl">
+            <img
+              src={props.previewImage}
+              alt="Card Preview"
+              class="rounded-t-xl h-52"
+            />
+          </figure>
+          <div class="flex flex-col p-8">
+            <div class="pb-6 text-2xl font-bold uppercase text-[#374151]">
+              {props.title}
+            </div>
+            <div class="text-lg text-[#374151]">{props.desc}</div>
+            <div class="flex justify-end pt-6">
+              <a
+                href={props.link}
+                target="_blank"
+                class="text-center w-full transform rounded-lg bg-[#23C25E] p-3 text-base font-bold text-[#ffffff] transition-transform hover:bg-opacity-85 active:scale-95"
+              >
+                Continue Reading
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="text-lg text-[#374151]">{props.desc}</div>
-        <div class="flex justify-end pt-6">
-          <button class="w-full transform rounded-lg bg-[#23C25E] p-3 text-base font-bold text-[#ffffff] transition-transform hover:bg-purple-800 active:scale-95">
-            Continue Reading
-          </button>
-        </div>
-      </div>
-    </div>
+      </AnimationOnScroll>
+    </>
   );
 }

@@ -7,17 +7,15 @@ function Faq() {
       <div className="hero">
         <div className="text-center hero-content">
           <div className="max-w-md">
-            <div animateOnce={true} animateIn="zoomInDown">
+            <AnimationOnScroll animateOnce={true} animateIn="fadeInUp">
               <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                 HTTP(S) 🔒
               </h1>
-            </div>
-            <div animateOnce={true} animateIn="slideInDown" delay={700}>
               <p className="py-6 mb-5">
                 what is the main difference between these 2 and why is it
                 important
               </p>
-            </div>
+            </AnimationOnScroll>
           </div>
         </div>
       </div>
@@ -84,15 +82,15 @@ function Faq() {
         </div>
       </div>
 
-      <div animateOnce={true} animateIn="zoomInUp" offset={50}>
+      <AnimationOnScroll animateOnce={true} animateIn="zoomInUp" offset={50}>
         <a
-          href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
+          href="/https"
           target="_blank"
           className="flex flex-col justify-center mx-auto mt-12 transition-transform duration-150 btn btn-primary btn-wide hover:translate-y-2"
         >
           [ Learn More ]
         </a>
-      </div>
+      </AnimationOnScroll>
     </div>
   );
 }
@@ -149,17 +147,19 @@ function FaqCard(props) {
             </form>
           </dialog>
           {/* modal close */}
-          <div
-            onClick={openModal}
-            className="max-w-sm mb-3 overflow-auto transition duration-100 cursor-pointer md:mx-auto mockup-code text-balance md:max-w-md hover:shadow-xl hover:scale-105"
-          >
-            <pre data-prefix="$:" className="text-warning">
-              <code>{props.question}</code>
-            </pre>
-            <pre data-prefix=">:" className="text-success text-clip">
-              <code>{props.answer}</code>
-            </pre>
-          </div>
+          <AnimationOnScroll animateIn="slideInUp" animateOnce={true}>
+            <div
+              onClick={openModal}
+              className="max-w-sm mb-3 overflow-auto transition duration-100 cursor-pointer md:mx-auto mockup-code text-balance md:max-w-md hover:shadow-xl hover:scale-105"
+            >
+              <pre data-prefix="$:" className="text-warning">
+                <code>{props.question}</code>
+              </pre>
+              <pre data-prefix=">:" className="text-success text-clip">
+                <code>{props.answer}</code>
+              </pre>
+            </div>
+          </AnimationOnScroll>
         </div>
       </div>
     </div>

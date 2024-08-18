@@ -106,6 +106,93 @@ const questions = [
     ],
     correctAnswer: "Distributed Denial of Service (DDoS)",
   },
+  {
+    question: "What does the acronym 'SQL' stand for?",
+    options: [
+      "Structured Query Language",
+      "Simple Query Language",
+      "Secure Query Language",
+      "Standard Query Language",
+    ],
+    correctAnswer: "Structured Query Language",
+  },
+  {
+    question: "Which of the following is NOT a type of malware?",
+    options: ["Virus", "Worm", "Trojan Horse", "Firewall"],
+    correctAnswer: "Firewall",
+  },
+  {
+    question: "What is the primary purpose of a firewall?",
+    options: [
+      "To filter incoming and outgoing network traffic",
+      "To store sensitive data securely",
+      "To encrypt data transmissions",
+      "To manage user authentication",
+    ],
+    correctAnswer: "To filter incoming and outgoing network traffic",
+  },
+  {
+    question:
+      "Which of the following is an attack involving people rather than technology?",
+    options: [
+      "Phishing",
+      "Brute force attack",
+      "SQL Injection",
+      "Man-in-the-middle attack",
+    ],
+    correctAnswer: "Phishing",
+  },
+  {
+    question: "What does 'XSS' stand for in cybersecurity?",
+    options: [
+      "Cross-Site Scripting",
+      "Cross-Site Security",
+      "Cross-Site SQL",
+      "Cross-Site Session",
+    ],
+    correctAnswer: "Cross-Site Scripting",
+  },
+  {
+    question:
+      "Which of the following is a common method to prevent SQL Injection?",
+    options: [
+      "Input validation",
+      "Using complex passwords",
+      "Disabling cookies",
+      "Enabling JavaScript",
+    ],
+    correctAnswer: "Input validation",
+  },
+  {
+    question: "Which of the following is NOT a valid HTTP method?",
+    options: ["GET", "POST", "FETCH", "DELETE"],
+    correctAnswer: "FETCH",
+  },
+  {
+    question: "What is the best way to secure your password?",
+    options: [
+      "Write it down on a sticky note",
+      "Share it with a trusted friend",
+      "Use a password manager",
+      "Use 'password' as your password",
+    ],
+    correctAnswer: "Use a password manager",
+  },
+  {
+    question: "Which of the following is NOT a type of cyber attack?",
+    options: ["Phishing", "Eavsdropping", "Fishing", "DDos"],
+    correctAnswer: "Fishing",
+  },
+  {
+    question: "What is the safest way to connect to a public Wi-Fi?",
+    options: [
+      "Use a VPN",
+      "Disable your firewall",
+      "Connect without any security measures",
+      "Share your connection with others",
+    ],
+    correctAnswer: "Use a VPN",
+  },
 ];
 
 export default questions;

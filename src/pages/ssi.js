@@ -1,4 +1,4 @@
-const content = `### Server-Side Include (SSI) Injection: Exploiting Server-Side Includes for Unauthorized Content
+const content = `
 
 ##### Introduction to SSI Injection
 
@@ -79,7 +79,7 @@ Preventing SSI Injection attacks requires a combination of secure coding practic
 
 Server-Side Include (SSI) Injection is a potent vulnerability that can lead to unauthorized content insertion, data leakage, and system compromise. By understanding the mechanics of SSI Injection and implementing effective security measures, organizations can protect their web applications from this threat. The key to prevention lies in secure coding practices, rigorous input validation, and proactive security management. Ensuring that SSI features are used securely and only when necessary will help safeguard against the risks associated with SSI Injection.`;
 const Page = {
-  title: "Server-Side Include (SSI) Injection: Exploiting Server-Side Includes for Unauthorized Content",
+  title: "Server-Side Include (SSI) Injection: A Comprehensive Guide",
   url: "/ssi-injection",
   author: "Ayaan Hashmi",
   time: "9",

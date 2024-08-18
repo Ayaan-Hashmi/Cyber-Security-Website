@@ -12,6 +12,7 @@ const Page = {
 
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import { Link } from "react-router-dom";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 

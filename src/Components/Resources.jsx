@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import "./team.css";
+import "../styles/team.css";
 import Footer from "./Footer";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -118,9 +118,11 @@ function Team() {
         {!isLocked && (
           <>
             <Resource />
+
             <section id="quiz">
               <Quiz />
             </section>
+
             <Footer />
           </>
         )}
@@ -209,30 +211,32 @@ function TeamMember(props) {
     }
   }, [props.github]);
   return (
-    <a
-      href={props.github}
-      target={target}
-      aria-label={props.name}
-      class="group flex max-w-sm flex-col items-center rounded-lg bg-[#9713fb] cursor-grab p-4 shadow-lg md:flex-row  my-5 hover:-translate-y-2 transition mx-4 md:mx-auto "
-    >
-      <img
-        class="mx-auto mb-4 h-24 w-24 rounded-lg md:mx-0 md:mb-0 md:mr-4"
-        src={props.avatar}
-        alt="Profile Image"
-      />
+    <>
+      <a
+        href={props.github}
+        target={target}
+        aria-label={props.name}
+        class="group flex max-w-sm flex-col items-center rounded-lg bg-[#9713fb] cursor-grab p-4 shadow-lg md:flex-row  my-5 hover:-translate-y-2 transition mx-4 md:mx-auto "
+      >
+        <img
+          class="mx-auto mb-4 h-24 w-24 rounded-lg md:mx-0 md:mb-0 md:mr-4"
+          src={props.avatar}
+          alt="Profile Image"
+        />
 
-      <div class="mx-auto flex flex-col justify-center text-center">
-        <h2 class="text-xl font-semibold group-hover:underline  transition-all duration-1000">
-          {props.name}
-        </h2>
+        <div class="mx-auto flex flex-col justify-center text-center">
+          <h2 class="text-xl font-semibold group-hover:underline  transition-all duration-1000">
+            {props.name}
+          </h2>
 
-        <p class="text-green-500 italic group-hover:not-italic group-hover:font-bold">
-          {props.title1} & {props.title2}
-        </p>
+          <p class="text-green-500 italic group-hover:not-italic group-hover:font-bold">
+            {props.title1} & {props.title2}
+          </p>
 
-        <p class="mt-1 text-slate-300">{props.desc}</p>
-      </div>
-    </a>
+          <p class="mt-1 text-slate-300">{props.desc}</p>
+        </div>
+      </a>
+    </>
   );
 }
 
@@ -243,17 +247,15 @@ function Resource() {
         <div className="hero">
           <div className="text-center hero-content">
             <div className="max-w-md">
-              <div animateOnce={true} animateIn="zoomInDown">
+              <AnimationOnScroll animateOnce={true} animateIn="fadeInUp">
                 <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                   Resources++📕
                 </h1>
-              </div>
-              <div animateOnce={true} animateIn="slideInDown" delay={50}>
                 <p className="py-6 mb-5">
                   A collection of handcrafted and open source resources to get
                   your journey started
                 </p>
-              </div>
+              </AnimationOnScroll>
             </div>
           </div>
         </div>

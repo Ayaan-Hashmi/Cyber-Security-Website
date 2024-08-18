@@ -1,4 +1,4 @@
-const content = `### SQL Injection: The Silent Killer of Databases
+const content = `
 
 ##### Introduction to SQL Injection
 

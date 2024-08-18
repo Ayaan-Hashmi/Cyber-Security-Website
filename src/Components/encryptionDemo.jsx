@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { AnimationOnScroll } from "react-animation-on-scroll";
 function encryptionDemo() {
   const [inputValue, setInputValue] = useState("");
   const [keyValue, setKeyValue] = useState("");
@@ -77,7 +77,7 @@ function encryptionDemo() {
     let key = keyValue;
     let balls;
     if (text.length == 0 || key.length == 0) {
-      alert("Please enter text and key");
+      alert("Please enter all the above values before encrypting");
       return;
     }
 
@@ -92,44 +92,52 @@ function encryptionDemo() {
   return (
     <div>
       <div className="min-h-screen p-8 bg-base-200">
-        <h1 className="text-3xl font-bold text-center md:text-4xl lg:text-5xl">
-          Encryption 🗝️
-        </h1>
-        <p className="py-6 mb-5 text-center">
-          Learn about encryption and why it's important with a demo
-        </p>
+        <AnimationOnScroll animateIn="fadeInUp" animateOnce={true}>
+          <h1 className="text-3xl font-bold text-center md:text-4xl lg:text-5xl">
+            Encryption 🗝️
+          </h1>
+
+          <p className="py-6 mb-5 text-center">
+            Learn about encryption and why it's important with a demo
+          </p>
+        </AnimationOnScroll>
         <div className="flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
           <div className="justify-center space-y-8 text-center md:text-left lg:w-1/2">
             <div className="mb-10">
-              <h2 className="mb-4 text-3xl font-bold">Encryption/what</h2>
-              {/* What is encryption a long summary*/}
-              <p className="text-balance">
-                Encryption is the process of converting information or data into
-                a code, especially to prevent unauthorized access. It helps
-                protect sensitive data, personal information, and can help
-                secure communication between devices. Encryption is a key
-                component of cybersecurity and is used to secure data in transit
-                and at rest.
-              </p>
+              <AnimationOnScroll animateIn="fadeInLeft" animateOnce={true}>
+                <h2 className="mb-4 text-3xl font-bold">Encryption/what</h2>
+                <p className="text-balance">
+                  Encryption is the process of converting information or data
+                  into a code, especially to prevent unauthorized access. It
+                  helps protect sensitive data, personal information, and can
+                  help secure communication between devices. Encryption is a key
+                  component of cybersecurity and is used to secure data in
+                  transit and at rest.
+                </p>
+              </AnimationOnScroll>
             </div>
 
             <div>
-              <h2 className="mb-4 text-3xl font-bold">Encryption/why</h2>
-              <p className="text-balance">
-                Encryption is the process of converting information or data into
-                a code, especially to prevent unauthorized access. It helps
-                protect sensitive data, personal information, and can help
-                secure communication between devices.
-              </p>
+              <AnimationOnScroll animateIn="fadeInLeft" animateOnce={true}>
+                <h2 className="mb-4 text-3xl font-bold">Encryption/why</h2>
+                <p className="text-balance">
+                  Encryption is the process of converting information or data
+                  into a code, especially to prevent unauthorized access. It
+                  helps protect sensitive data, personal information, and can
+                  help secure communication between devices.
+                </p>
+              </AnimationOnScroll>
             </div>
             <div>
-              <h2 className="mb-4 text-3xl font-bold">Encryption/when</h2>
-              <p className="text-balance">
-                Encryption is the process of converting information or data into
-                a code, especially to prevent unauthorized access. It helps
-                protect sensitive data, personal information, and can help
-                secure communication between devices.
-              </p>
+              <AnimationOnScroll animateIn="fadeInLeft" animateOnce={true}>
+                <h2 className="mb-4 text-3xl font-bold">Encryption/when</h2>
+                <p className="text-balance">
+                  Encryption is the process of converting information or data
+                  into a code, especially to prevent unauthorized access. It
+                  helps protect sensitive data, personal information, and can
+                  help secure communication between devices.
+                </p>
+              </AnimationOnScroll>
             </div>
           </div>
           <div className="flex flex-col space-y-8 lg:w-1/2">
@@ -148,6 +156,7 @@ function encryptionDemo() {
               >
                 🔒
               </li>
+
               <li
                 className={`step transition-colors duration-500 ${
                   showCipherText ? "" : "step-primary"
@@ -159,9 +168,11 @@ function encryptionDemo() {
 
             <div className="w-full max-w-lg mx-auto form-control ">
               <label className="label">
-                <span className="text-gray-300 label-text">
-                  Text to Encrypt
-                </span>
+                <AnimationOnScroll animateIn="fadeInUp" animateOnce={true}>
+                  <span className="text-gray-300 label-text">
+                    Text to Encrypt
+                  </span>
+                </AnimationOnScroll>
               </label>
               <input
                 type="text"
@@ -173,8 +184,17 @@ function encryptionDemo() {
             </div>
             <div className="w-full max-w-lg mx-auto form-control ">
               <label className="label">
-                <span className="text-gray-300 label-text">Key To Encrypt</span>
+                <AnimationOnScroll
+                  animateIn="fadeInDown"
+                  animateOnce={true}
+                  offset={80}
+                >
+                  <span className="text-gray-300 label-text">
+                    Key To Encrypt
+                  </span>
+                </AnimationOnScroll>
               </label>
+
               <input
                 type="text"
                 placeholder="Eg: sRgByUK"
@@ -183,11 +203,11 @@ function encryptionDemo() {
                 className="w-full max-w-lg text-gray-100 bg-gray-800 input input-bordered"
               />
               <label className="flex justify-between label">
-                <span className="text-gray-500 label-text-alt">
+                <span className="text-gray-500 label-text-alt ">
                   Click here to encrypt
                 </span>
                 <button
-                  className="text-gray-400 bg-gray-800 btn btn-square btn-sm hover:bg-gray-700"
+                  className="text-gray-400 bg-gray-800 btn btn-square btn-sm hover:bg-gray-700 hover:text-gray-300 hover:scale-105"
                   onClick={handleSubmit}
                 >
                   -{">"}
@@ -203,6 +223,7 @@ function encryptionDemo() {
                   Encrypted Text:
                 </span>
               </label>
+
               <input
                 type="text"
                 placeholder="Eg: YAGDGGD"

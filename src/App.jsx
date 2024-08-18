@@ -46,7 +46,7 @@ function App() {
   React.useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 2000); // 27k
+    }, 1); // 27k
   }, []);
   console.log(Pages.cybersecurity);
   return (

@@ -15,43 +15,42 @@ function BestPractices() {
       <div className="hero">
         <div className="text-center hero-content">
           <div className="max-w-md">
-            <div animateOnce={true} animateIn="zoomInDown">
+            <AnimationOnScroll animateOnce={true} animateIn="fadeInUp">
               <h1 className="mt-10 text-3xl font-bold md:text-4xl lg:text-5xl">
                 /Best Practices/ 🧑‍💻
               </h1>
-            </div>
-            <div animateOnce={true} animateIn="slideInDown" delay={700}>
+
               <p className="py-6 mb-5">
                 Now that we have learned about common methods hackers use to
                 access you content . Lets learn how to protect ourselves
               </p>
-            </div>
+            </AnimationOnScroll>
           </div>
         </div>
       </div>
       <div className="flex flex-col justify-center w-full lg:flex-row">
-        <div animateOnce={true} animateIn="rotateInDownLeft">
+        <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
           <TeamMember
             src1={dm}
             src2={cm}
             name="Cross Site Scripting"
             description="Learn Code Sanitization "
-            link="https://www.techtarget.com/searchsecurity/definition/cyber-hygiene"
+            link="/cyber-hygiene"
           ></TeamMember>
-        </div>
-        <div animateOnce={true} animateIn="rotateInDownRight">
+        </AnimationOnScroll>
+        <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
           <TeamMember
             src2={vp}
             src1={sp}
             name="Key handling"
             description="Learn about .ENV"
-            link="https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa"
+            link="/env"
           ></TeamMember>
-        </div>
+        </AnimationOnScroll>
       </div>
       <br></br>
       <div className="flex flex-col justify-center w-full lg:flex-row">
-        <div animateOnce={true} animateIn="rotateInUpRight">
+        <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
           <TeamMember
             src1={sq}
             src2={dq}
@@ -59,16 +58,16 @@ function BestPractices() {
             description="Learn Form Validation"
             link="/form-validation"
           ></TeamMember>
-        </div>
-        <div animateOnce={true} animateIn="rotateInUpLeft">
+        </AnimationOnScroll>
+        <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
           <TeamMember
             src2={vl}
             src1={sl}
             name="Preventing LFI"
             description="Learn about File Input"
-            link="https://dev.to/joannaotmianowska/the-simplest-way-to-validate-file-input-type-1dm9"
+            link="/file-input-validation"
           ></TeamMember>
-        </div>
+        </AnimationOnScroll>
       </div>
       <br></br>
     </div>

@@ -1,4 +1,4 @@
-const content = `### Remote Code Execution (RCE): The Ultimate Cybersecurity Threat
+const content = `
 
 ##### Introduction to RCE
 
@@ -70,7 +70,7 @@ Remote Code Execution is a powerful and dangerous attack vector that can lead to
 
 const Page = {
   title: "Understanding Remote Code Execution (RCE) and Its Impacts",
-  url: "/rce-understanding",
+  url: "/remote-code-execution",
   author: "Ayaan Hashmi",
   time: "10",
   body: content,
