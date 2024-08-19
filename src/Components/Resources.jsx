@@ -63,13 +63,13 @@ function Team() {
       }).then((result) => {
         // fire the final alert telling user to download the file
         Swal.fire({
-          title: "Download Exclusive Content",
-          text: "Click the button below to download the resources.",
+          title: "Heads-Up!",
+          text: "Looks like a file just landed on your system. Curious? Go ahead, take a look!",
           icon: "info",
           showCancelButton: false,
           allowOutsideClick: false,
           allowEscapeKey: false,
-          confirmButtonText: "Download",
+          confirmButtonText: "Okay",
         }).then(() => {
           const answer2 = result.value;
           userAnswers += `
