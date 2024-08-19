@@ -14,7 +14,9 @@ function Features() {
         <div className="text-center hero-content">
           <div className="max-w-md">
             <AnimationOnScroll animateOnce={true} animateIn="fadeInUp">
-              <h1 className="mt-5 text-5xl font-bold ">[ Vulnerabilities ]</h1>
+              <h1 className="mt-4 text-3xl font-bold md:text-4xl lg:text-5xl">
+                [ Vulnerabilities ]
+              </h1>
               <p className="py-6 mb-5 ">The way hackers exploit your website</p>
             </AnimationOnScroll>
           </div>

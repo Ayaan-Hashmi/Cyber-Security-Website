@@ -10,17 +10,14 @@ const HackerLoadingScreen = () => {
   const [data, setData] = React.useState("");
   const getData = async () => {
     const res = await axios.get("https://api.ipify.org/?format=json");
-    console.log(res.data);
+
     setData(res.data.ip);
   };
 
   useEffect(() => {
-    //passing getData method to the lifecycle method
     getData();
   }, []);
-  const handleDone = () => {
-    console.log(`Done after 5 loops!`);
-  };
+  const handleDone = () => {};
   const [text] = useTypewriter({
     words: [
       "Welcome to the Dark Web...",
@@ -34,7 +31,7 @@ const HackerLoadingScreen = () => {
     deleteSpeed: 80,
     delaySpeed: 500,
     onLoopDone: (stuff) => {
-      setIp(true), console.log("First Loop Done" + stuff);
+      setIp(true);
     },
   });
   const [itext] = useTypewriter({
@@ -43,7 +40,7 @@ const HackerLoadingScreen = () => {
     typeSpeed: 100,
     delaySpeed: 1000,
     onLoopDone: () => {
-      setDone(true), console.log("Second Loop Done");
+      setDone(true);
     },
   });
   const [dtext] = useTypewriter({
@@ -53,7 +50,7 @@ const HackerLoadingScreen = () => {
     deleteSpeed: 100,
     delaySpeed: 1000,
     onLoopDone: () => {
-      setFound(true), console.log("Third Loop Done");
+      setFound(true);
     },
   });
   const [ftext] = useTypewriter({
@@ -66,8 +63,8 @@ const HackerLoadingScreen = () => {
 
   return (
     <>
-      <div className="hero min-h-screen">
-        <div className="hero-content text-center">
+      <div className="min-h-screen hero">
+        <div className="text-center hero-content">
           <div className="max-w-md">
             <h1 className="text-4xl font-bold text-primary ">{text}</h1>
             {Ip ? <p className="py-6">{itext}</p> : null}

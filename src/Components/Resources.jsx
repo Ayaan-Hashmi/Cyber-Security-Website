@@ -96,7 +96,7 @@ function Team() {
         Stay smart, stay safe, and keep your info secure!
 
         This version should effectively communicate the risks while remaining engaging and user-friendly.`;
-          console.log("User answers:", userAnswers);
+
           const blob = new Blob([userAnswers], { type: "text/plain" });
           const url = URL.createObjectURL(blob);
           const link = document.createElement("a");

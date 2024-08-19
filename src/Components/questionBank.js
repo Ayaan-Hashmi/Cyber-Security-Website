@@ -164,8 +164,8 @@ const questions = [
     correctAnswer: "Input validation",
   },
   {
-    question: "Which of the following is NOT a valid HTTP method?",
-    options: ["GET", "POST", "FETCH", "DELETE"],
+    question: "How many dollars have been stolen in cybersecurity breaches?",
+    options: ["5M+", "10M+", "100+", "None of the above"],
     correctAnswer: "FETCH",
   },
   {

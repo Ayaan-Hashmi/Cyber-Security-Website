@@ -53,9 +53,7 @@ const Quiz = () => {
   }, []);
   const percentageScore = (score / questions.length) * 100;
   const downloadCertificate = async () => {
-    const canvas = await html2canvas(canvasRef.current);
-    const dataURL = canvas.toDataURL("image/jpg");
-    downloadjs(dataURL, "certificate.png", "image/png");
+    alert("Downloading Certificate" + percentageScore + "%");
   };
   return (
     <div className="min-h-screen bg-base-300">

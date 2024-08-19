@@ -9,7 +9,7 @@ import * as Pages from "./pages";
 const Loader = () => {
   return (
     <>
-      <Component.assetLoader />
+      <Component.HackerLoadingScreen />
     </>
   );
 };
@@ -44,11 +44,17 @@ const Core = () => {
 function App() {
   const [loading, setLoaded] = React.useState(false);
   React.useEffect(() => {
+    const visited = localStorage.getItem("visited");
+    if (visited) {
+      setLoaded(true);
+      return;
+    }
     setTimeout(() => {
       setLoaded(true);
-    }, 1); // 27k
+      localStorage.setItem("visited", true);
+    }, 27000); // 27k
   }, []);
-  console.log(Pages.cybersecurity);
+
   return (
     <>
       <Router>

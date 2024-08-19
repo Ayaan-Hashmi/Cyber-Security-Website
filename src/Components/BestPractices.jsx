@@ -21,8 +21,8 @@ function BestPractices() {
               </h1>
 
               <p className="py-6 mb-5">
-                Now that we have learned about common methods hackers use to
-                access you content . Lets learn how to protect ourselves
+                Learn about the best practices to prevent common
+                vulnerabilities.Start by sliding through the cards below.
               </p>
             </AnimationOnScroll>
           </div>
