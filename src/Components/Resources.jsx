@@ -82,6 +82,8 @@ function Team() {
         - Your IP Address: ${ip} (Which we were able to get when you visited this site and submitted the form)
 
         Did you realize you gave all that away just by filling out a form?
+        Don't worry, we're not storing any of it. But others might be! 
+        Do you also realize that you're downloading a file from a random website? 
 
         A Friendly Heads-Up:
 
