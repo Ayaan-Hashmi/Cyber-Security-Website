@@ -75,15 +75,13 @@ function Team() {
           userAnswers += `
         Whoa, ${answer1}!
 
-        You just shared some personal info for access to exclusive content:
+        You just shared some personal info for access to the 'Exclusive Content':
 
-        • Your Name: ${answer1}
-        • Your Phone Number: ${answer2}
-        • Your IP Address: ${ip} [which i was able to get when you visited this site and submitted the form]
+        - Your Name: ${answer1}
+        - Your Phone Number: ${answer2}
+        - Your IP Address: ${ip} (Which we were able to get when you visited this site and submitted the form)
 
-        Did you realize you gave all that away just by filling out a form? 
-        Don't worry, I'm not storing any of it. But others might be! 
-        Do you also realize that you're downloading a file from a random website? 
+        Did you realize you gave all that away just by filling out a form?
 
         A Friendly Heads-Up:
 
@@ -92,10 +90,7 @@ function Team() {
         - Remember, if a website isn't secure, your data might end up in the hands of third-party actors.
         - Don't blindly trust website developers or forms asking for personal details.
 
-
-        Stay smart, stay safe, and keep your info secure!
-
-        This version should effectively communicate the risks while remaining engaging and user-friendly.`;
+        Stay smart, stay safe, and keep your info secure!`;
           console.log("User answers:", userAnswers);
           const blob = new Blob([userAnswers], { type: "text/plain" });
           const url = URL.createObjectURL(blob);
