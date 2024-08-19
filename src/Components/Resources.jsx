@@ -63,27 +63,25 @@ function Team() {
       }).then((result) => {
         // fire the final alert telling user to download the file
         Swal.fire({
-          title: "Download Exclusive Content",
-          text: "Click the button below to download the resources.",
+          title: "Heads-Up!",
+          text: "Looks like a file just landed on your system. Curious? Go ahead, take a look!",
           icon: "info",
           showCancelButton: false,
           allowOutsideClick: false,
           allowEscapeKey: false,
-          confirmButtonText: "Download",
+          confirmButtonText: "Okay",
         }).then(() => {
           const answer2 = result.value;
           userAnswers += `
         Whoa, ${answer1}!
 
-        You just shared some personal info for access to exclusive content:
+        You just shared some personal info for access to the 'Exclusive Content':
 
-        • Your Name: ${answer1}
-        • Your Phone Number: ${answer2}
-        • Your IP Address: ${ip} [which i was able to get when you visited this site and submitted the form]
+        - Your Name: ${answer1}
+        - Your Phone Number: ${answer2}
+        - Your IP Address: ${ip} (Which we were able to get when you visited this site and submitted the form)
 
-        Did you realize you gave all that away just by filling out a form? 
-        Don't worry, I'm not storing any of it. But others might be! 
-        Do you also realize that you're downloading a file from a random website? 
+        Did you realize you gave all that away just by filling out a form?
 
         A Friendly Heads-Up:
 
@@ -96,7 +94,7 @@ function Team() {
         Stay smart, stay safe, and keep your info secure!
 
         This version should effectively communicate the risks while remaining engaging and user-friendly.`;
-
+          console.log("User answers:", userAnswers);
           const blob = new Blob([userAnswers], { type: "text/plain" });
           const url = URL.createObjectURL(blob);
           const link = document.createElement("a");
