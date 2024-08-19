@@ -91,9 +91,8 @@ function Team() {
         - Don't blindly trust website developers or forms asking for personal details.
 
 
-        Stay smart, stay safe, and keep your info secure!
-
-        This version should effectively communicate the risks while remaining engaging and user-friendly.`;
+        Stay smart, stay safe, and keep your info secure!`;
+          
           console.log("User answers:", userAnswers);
           const blob = new Blob([userAnswers], { type: "text/plain" });
           const url = URL.createObjectURL(blob);
