@@ -4,8 +4,6 @@ import * as Component from "./Components";
 import "animate.css/animate.compat.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import * as Pages from "./pages";
-// TODO: Add links correctly , finish writup of all pages , optimize imges and dependancies , also add lazy loading
-
 const Loader = () => {
   return (
     <>
@@ -43,23 +41,39 @@ const Core = () => {
 };
 function App() {
   const [loading, setLoaded] = React.useState(false);
+  const [transitionClass, setTransitionClass] = React.useState("");
   React.useEffect(() => {
-    const visited = localStorage.getItem("visited");
-    if (visited) {
+    if (localStorage.getItem("visited")) {
       setLoaded(true);
-      return;
     }
     setTimeout(() => {
-      setLoaded(true);
-      localStorage.setItem("visited", true);
-    }, 27000); // 27k
+      setTransitionClass("fade-out");
+      setTimeout(() => {
+        setTransitionClass("fade-in");
+        setLoaded(true);
+      }, 500);
+      // This should match the duration of the fade-out animation
+    }, 27000);
   }, []);
 
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={loading ? <Core /> : <Loader />} />
+          <Route
+            path="/"
+            element={
+              loading ? (
+                <div className={transitionClass}>
+                  <Core />
+                </div>
+              ) : (
+                <div className={transitionClass}>
+                  <Loader />
+                </div>
+              )
+            }
+          />
 
           {Object.entries(Pages).map(([key, value]) => {
             return (

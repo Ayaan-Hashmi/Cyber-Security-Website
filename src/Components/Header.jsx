@@ -33,7 +33,7 @@ function Header() {
             </label>
             <ul
               tabindex="0"
-              className="p-2 mt-3 bg-transparent shadow menu menu-compact dropdown-content rounded-box w-52"
+              className="p-2 mt-3 shadow bg-base-300 menu menu-compact dropdown-content rounded-box w-52"
             >
               <li>
                 <a href="#vulnerabilities">Vulnerabilities</a>
