@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { useTypewriter } from "react-simple-typewriter";
 import axios from "axios";
@@ -10,14 +10,12 @@ const HackerLoadingScreen = () => {
   const [data, setData] = React.useState("");
   const getData = async () => {
     const res = await axios.get("https://api.ipify.org/?format=json");
-
     setData(res.data.ip);
   };
-
   useEffect(() => {
     getData();
   }, []);
-  const handleDone = () => {};
+
   const [text] = useTypewriter({
     words: [
       "Welcome to the Dark Web...",

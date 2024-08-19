@@ -5,9 +5,7 @@ import xss from "../assets/xss.jpg";
 import rce from "../assets/rce.jpg";
 import env from "../assets/env.jpg";
 import sql from "../assets/sql.jpg";
-function Features() {
-  // Rest of your component...
-
+function Vulnerabilities() {
   return (
     <>
       <div className="hero bg-base-100 ">
@@ -25,7 +23,7 @@ function Features() {
 
       <div className="flex-col justify-center w-full lg:flex lg:flex-row sm:carousel">
         <div animateOnce={true} animateIn="zoomInLeft">
-          <FeatureCardd
+          <Vuln
             title="XSS Attacks"
             desc="Inject malicious scripts into web apps, exploiting vulnerabilities to steal data or hijack sessions.
 "
@@ -38,7 +36,7 @@ function Features() {
         <div className="mx-auto divider lg:divider-horizontal"></div>
 
         <div animateOnce={true} animateIn="zoomIn">
-          <FeatureCardd
+          <Vuln
             title="SQL INJECTION"
             desc="Compromise databases via unauthorized queries, enabling data manipulation or exposure."
             longdesc="SQL Injection (SQLi) is a type of security vulnerability typically found in web applications that interact with databases. SQLi attacks enable attackers to execute arbitrary SQL queries within the database used by the application. An SQL injection vulnerability may be used by attackers to bypass authentication, extract sensitive data, modify or delete records, and perform administrative operations on the database."
@@ -48,7 +46,7 @@ function Features() {
         </div>
         <div className="mx-auto divider lg:divider-horizontal"></div>
         <div animateOnce={true} animateIn="zoomInRight">
-          <FeatureCardd
+          <Vuln
             title="LFI/RFI"
             longdesc="Local File Inclusion (LFI) / Remote File Inclusion (RFI) are types of security vulnerabilities commonly found in web applications. LFI allows attackers to include files from the server's filesystem, while RFI allows the inclusion of files from remote servers. These vulnerabilities may be exploited to execute arbitrary code, disclose sensitive information, or escalate privileges within the server hosting the web application."
             desc="Allow attackers to read local files without relying on environment variables, posing a significant security risk.
@@ -61,7 +59,7 @@ function Features() {
 
       <div className="flex flex-col justify-center w-full mt-8 mb-6 lg:flex-row">
         <div animateOnce={true} animateIn="zoomInLeft">
-          <FeatureCardd
+          <Vuln
             title="SSI Injection"
             longdesc="Server-Side Includes (SSI) Injection is a type of security vulnerability found in web applications that use SSI directives. SSI injection attacks enable attackers to inject and execute arbitrary SSI directives on the server. This can be used to read sensitive files, execute server-side commands, or modify the content delivered to the client, potentially leading to unauthorized access or data manipulation.
 
@@ -74,7 +72,7 @@ function Features() {
         </div>
         <div className="mx-auto divider lg:divider-horizontal"></div>
         <div animateOnce={true} animateIn="zoomInRight">
-          <FeatureCardd
+          <Vuln
             title="RCE"
             longdesc="Remote Code Execution (RCE) is a type of security vulnerability that allows attackers to execute arbitrary code on a remote server. RCE vulnerabilities can be exploited through various means, such as injecting malicious code via web applications or exploiting flaws in software running on the server. Successful exploitation of RCE can lead to complete control over the affected system, allowing attackers to steal data, disrupt services, or deploy malware."
             desc="Enables execution of arbitrary commands on a remote host, granting full control of the webserver.
@@ -90,8 +88,8 @@ function Features() {
   );
 }
 
-export default Features;
-function FeatureCardd(props) {
+export default Vulnerabilities;
+function Vuln(props) {
   return (
     <>
       <AnimationOnScroll animateIn="zoomIn" animateOnce={true}>

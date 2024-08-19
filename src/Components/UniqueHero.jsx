@@ -1,11 +1,10 @@
 // src/components/UniqueHeroSection.jsx
 import React, { useState, Suspense, lazy } from "react";
-import { motion } from "framer-motion";
+
 import RotatingText from "./RotatingWord";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import cash from "../assets/cash.png";
 import cashbag from "../assets/cashbag.png";
-import cashstack from "../assets/cashstack.png";
 const AssetLoader = lazy(() => import("./assetLoader.jsx"));
 import Globe from "./globe"; // importing globe with lazy loading
 const UniqueHeroSection = () => {

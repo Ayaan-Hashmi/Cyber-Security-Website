@@ -1,17 +1,40 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import questions from "./questionBank";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import html2canvas from "html2canvas";
-import downloadjs from "downloadjs";
-// TODO : Handle certificate download
+import html2canvas from "html2canvas-pro";
+import msnLogo from "../assets/msn-logo.png";
 const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const canvasRef = useRef(null);
+  const [userName, setUserName] = useState(
+    localStorage.getItem("name") || "Anonymous"
+  );
 
+  const certificateRef = useRef();
+
+  const downloadCertificate = async () => {
+    if (certificateRef.current === null) {
+      return;
+    }
+
+    try {
+      const canvas = await html2canvas(certificateRef.current, {
+        useCORS: true,
+        allowTaint: false,
+      });
+      const dataUrl = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = dataUrl;
+      link.download = "certificate.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Failed to download certificate:", error);
+    }
+  };
   const handleOptionClick = (option) => {
     setSelectedOption(option);
   };
@@ -40,24 +63,142 @@ const Quiz = () => {
     setScore(0);
     setShowScore(false);
   };
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    const img = new Image();
-    img.src = "./cyber.jpg";
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      setImageLoaded(true);
-    };
-  }, []);
   const percentageScore = (score / questions.length) * 100;
-  const downloadCertificate = async () => {
-    alert("Downloading Certificate" + percentageScore + "%");
-  };
   return (
     <div className="min-h-screen bg-base-300">
       <div className="hero">
+        <div
+          ref={certificateRef}
+          style={{
+            position: "absolute",
+            top: "-9999px",
+            left: "-9999px",
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "#fff",
+              width: "800px",
+              padding: "20px",
+              borderTop: "10px solid #e0aa00",
+              borderBottom: "10px solid #e0aa00",
+              boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+              textAlign: "center",
+              fontFamily: "Arial, sans-serif",
+              margin: "0 auto",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: "20px",
+              }}
+            >
+              <img
+                src={msnLogo}
+                alt="Mayoor School Logo"
+                style={{ height: "100px", marginRight: "20px" }}
+              />
+              <div style={{ textAlign: "left" }}></div>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: "#2a2d56",
+                color: "#fff",
+                padding: "10px 0",
+                fontSize: "24px",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
+              <p>Completion of Cyber Sec. Quiz</p>
+            </div>
+
+            <div style={{ fontSize: "18px", margin: "0", color: "#000000" }}>
+              <p>This certificate is awarded to</p>
+              <div
+                style={{
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                  margin: "20px 0",
+                  borderBottom: "2px solid #000",
+                  display: "inline-block",
+                  width: "300px",
+                  paddingBottom: "5px",
+                  color: "#000000",
+                }}
+              >
+                {userName}
+              </div>
+            </div>
+
+            <div
+              style={{ fontSize: "16px", margin: "20px 0", color: "#000000" }}
+            >
+              <p>IN APPRECIATION OF YOUR SKILLSET</p>
+              <p>
+                <strong>AT THE CYBER SEC 101 SITE</strong>
+              </p>
+              <p>DEVELOPED BY MAYOOR TEAM</p>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                marginTop: "50px",
+              }}
+            >
+              <div>
+                <p
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                    margin: "0",
+                    color: "#000000",
+                  }}
+                >
+                  Medhansh
+                </p>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    margin: "5px 0 0 0",
+                    textTransform: "uppercase",
+                    color: "#000000",
+                  }}
+                >
+                  DEVELOPER
+                </p>
+              </div>
+              <div>
+                <p
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                    margin: "0",
+                    color: "#000000",
+                  }}
+                >
+                  Ayaan
+                </p>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    margin: "5px 0 0 0",
+                    textTransform: "uppercase",
+                    color: "#000000",
+                  }}
+                >
+                  DEVELOPER
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="text-center hero-content">
           <div className="max-w-md">
             <AnimationOnScroll animateOnce={true} animateIn="fadeInUp">
@@ -79,10 +220,11 @@ const Quiz = () => {
             <h1 className="mb-4 text-2xl font-bold text-white">
               Your score: {score} / {questions.length}
             </h1>
-            {percentageScore >= 70 ? (
+            {percentageScore <= 70 ? (
               <>
                 <p className="mt-5 mb-5 text-wrap">
-                  Please take the quiz again to get the certificate
+                  Please pass the quiz again with 70% or more to get the
+                  certificate
                 </p>
                 <button
                   onClick={handleRestartQuiz}

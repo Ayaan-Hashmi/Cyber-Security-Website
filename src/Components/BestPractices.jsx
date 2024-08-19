@@ -1,5 +1,4 @@
 import React from "react";
-
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import cm from "../assets/vxss.png";
 import dm from "../assets/sxss.png";
@@ -30,50 +29,50 @@ function BestPractices() {
       </div>
       <div className="flex flex-col justify-center w-full lg:flex-row">
         <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
-          <TeamMember
+          <BestPractice
             src1={dm}
             src2={cm}
             name="Cross Site Scripting"
             description="Learn Code Sanitization "
             link="/cyber-hygiene"
-          ></TeamMember>
+          ></BestPractice>
         </AnimationOnScroll>
         <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
-          <TeamMember
+          <BestPractice
             src2={vp}
             src1={sp}
             name="Key handling"
             description="Learn about .ENV"
             link="/env"
-          ></TeamMember>
+          ></BestPractice>
         </AnimationOnScroll>
       </div>
       <br></br>
       <div className="flex flex-col justify-center w-full lg:flex-row">
         <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
-          <TeamMember
+          <BestPractice
             src1={sq}
             src2={dq}
             name="SQL Injection"
             description="Learn Form Validation"
             link="/form-validation"
-          ></TeamMember>
+          ></BestPractice>
         </AnimationOnScroll>
         <AnimationOnScroll animateOnce={true} animateIn="zoomIn">
-          <TeamMember
+          <BestPractice
             src2={vl}
             src1={sl}
             name="Preventing LFI"
             description="Learn about File Input"
             link="/file-input-validation"
-          ></TeamMember>
+          ></BestPractice>
         </AnimationOnScroll>
       </div>
       <br></br>
     </div>
   );
 }
-function TeamMember(props) {
+function BestPractice(props) {
   return (
     <div
       id="component-demo"

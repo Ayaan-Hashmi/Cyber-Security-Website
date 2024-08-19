@@ -25,12 +25,9 @@ function Faq() {
           <FaqCard
             question="What is HTTP"
             answer="HTTP (Hypertext Transfer Protocol) is ..."
-            longdesc="HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to various commands. It operates at the application layer and uses a request-response model where a client sends a request to a server, and the server sends back the requested information.
-"
+            longdesc="HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to various commands. It operates at the application layer and uses a request-response model where a client sends a request to a server, and the server sends back the requested information."
           />
         </div>
-
-        {/* Hide the divider on small screens and adjust styling for larger screens */}
         <div className="items-center justify-center hidden h-screen mx-auto sm:flex md:flex lg:flex divider lg:divider-horizontal"></div>
 
         <div animateOnce={true} animateIn="lightSpeedInRight">
@@ -108,12 +105,12 @@ function FaqCard(props) {
   const openModal = () => {
     document.getElementById(props.question).showModal();
     setIsModalOpen(true);
-    applyBlur(); // Apply blur when opening the modal
+    applyBlur();
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    removeBlur(); // Remove blur when closing the modal
+    removeBlur();
     document.getElementById(props.question).close();
   };
   return (
@@ -146,7 +143,6 @@ function FaqCard(props) {
               </button>
             </form>
           </dialog>
-          {/* modal close */}
           <AnimationOnScroll animateIn="slideInUp" animateOnce={true}>
             <div
               onClick={openModal}

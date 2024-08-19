@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { AnimationOnScroll } from "react-animation-on-scroll";
 const RotatingWords = ({ words }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 1000); // Change word every second
+    }, 1000);
 
-    return () => clearInterval(intervalId); // Cleanup on unmount
+    return () => clearInterval(intervalId);
   }, [words]);
 
   return (
