@@ -46,7 +46,7 @@ Redirect HTTP to HTTPS: Configure your server to automatically redirect HTTP req
 By implementing HTTPS, you enhance the security, credibility, and trustworthiness of your website. Explore our resources to learn more about protecting your online presence and ensuring a safe browsing experience for your users.`;
 
 const Page = {
-  title: "Understanding HTTPS vs. HTTP",
+  title: "Understanding HyperText Transfer Protocol",
   url: "/https",
   author: "Ayaan Hashmi",
   time: "5",

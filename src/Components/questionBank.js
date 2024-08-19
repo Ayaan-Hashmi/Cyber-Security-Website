@@ -101,18 +101,18 @@ const questions = [
     question:
       "Which type of attack involves overwhelming a website with traffic to make it unavailable?",
     options: [
-      "Distributed Denial of Service (DDoS)",
+      "Cross-Site Request Forgery (CSRF)",
       "Cross-Site Scripting (XSS)",
       "SQL Injection",
-      "Cross-Site Request Forgery (CSRF)",
+      "Distributed Denial of Service (DDoS)",
     ],
     correctAnswer: "Distributed Denial of Service (DDoS)",
   },
   {
     question: "What does the acronym 'SQL' stand for?",
     options: [
-      "Structured Query Language",
       "Simple Query Language",
+      "Structured Query Language",
       "Secure Query Language",
       "Standard Query Language",
     ],
@@ -158,10 +158,10 @@ const questions = [
     question:
       "Which of the following is a common method to prevent SQL Injection?",
     options: [
-      "Input validation",
       "Using complex passwords",
       "Disabling cookies",
       "Enabling JavaScript",
+      "Input validation",
     ],
     correctAnswer: "Input validation",
   },
